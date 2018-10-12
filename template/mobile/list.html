@@ -1,0 +1,260 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta http-equiv="cache-control" content="no-siteapp">
+<title></title>
+<meta name="keywords" content="{$settings['keyword']}">
+<meta name="description" content="{$settings['desc']}">
+<link rel="stylesheet" href="{MODULE_URL}style/css/bootstrap.min.css" />
+<link href="{MODULE_URL}style/css/swiper.min.css" rel="stylesheet" type="text/css" >        
+<link href="{MODULE_URL}style/css/iconfont.css" rel="stylesheet" type="text/css" />
+<link href="{MODULE_URL}style/css/blackcolor.css" rel="stylesheet" type="text/css" />
+<link href="{MODULE_URL}style/css/style.min.css" rel="stylesheet" type="text/css" />
+<script src="{MODULE_URL}style/js/jquery.min.js"></script>
+<script type="text/javascript" src="{MODULE_URL}images/js/dropload.min.js"></script>
+<!--[if lt IE 9]><script src="{MODULE_URL}style/js/html5.js"></script><![endif]-->
+<style>
+body:before {
+    background: url(/style/bg.jpg) center 0 no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    overflow: hidden;
+}
+ul{
+
+border-bottom: 1px solid #999999;
+
+
+}
+</style>
+</head>
+<body class="index">
+<div class="hy-head-menu">
+<div class="container" style="clear: both;">
+<div class="row">
+    <div class="item">
+        <div class="logo">
+           <a class="hidden-sm hidden-xs" href="{php echo $this->createMobileUrl('index');}"><img src="
+			{if $this->module['config']['logo']}{php echo tomedia($this->module['config']['logo'])}{else}{MODULE_URL}images/images/logo.png{/if}" /></a>
+        </div>
+        <div class="search hidden-sm">
+            <form  id="ff-search" action="./index.php" method="get" role="form">
+            <input type="hidden" name="i" value="{$_W['uniacid']}">  
+            <input type="hidden" name="c" value="{$_GPC['c']}">  
+            <input type="hidden" name="do" value="search">  
+            <input type="hidden" name="m" value="{$_GPC['m']}">
+            <input class="form-control" placeholder="输入影片关键词..." type="text" id="ff-wd" name="key" required="">
+            <input type="submit" class="hide"><a href="javascript:" class="btns" title="搜索" onClick="$('#ff-search').submit();"><i class="icon iconfont icon-search"></i></a></form>
+        </div>
+        <ul class="menulist hidden-xs">
+        <li id="nav-index"><a href="{php echo $this->createMobileUrl('index');}">首页</a></li>
+        <li id="nav-tv"><a href="{php echo $this->createMobileUrl('list',array('op'=>'dianying'));}">电影</a></li>
+        <li id="nav-dianying"><a href="{php echo $this->createMobileUrl('list',array('op'=>'dianshi'));}">电视剧</a></li>
+        <li id="nav-dongman"><a href="{php echo $this->createMobileUrl('list',array('op'=>'dongman'));}">动漫</a></li>
+        <li id="nav-zongyi"><a href="{php echo $this->createMobileUrl('list',array('op'=>'zongyi'));}">综艺</a></li>
+        {if $category}
+        {loop $category $v}     
+        <li id="nav-down"><a href="{if $v['url']}{$v['url']}{else}{php echo $this->createMobileUrl('list',array('op'=>$v['id'],'pid'=>$v['parentid']));}{/if}" target="_blank">{$v['name']}</a></li>
+        {/loop}  
+        {/if}     
+      <!--   <li id="nav-down"><a href="{php echo $this->createMobileUrl('wanneng');}" target="_blank">万能播放</a></li> -->
+        </ul>
+    </div>
+</div>  </div>
+</div>
+
+<div class="container" style="clear: both;">
+<div class="row">
+<div class="hy-cascade ">
+            <div class="left-head hidden-sm hidden-xs">
+                <ul class="">                    
+                    <li><a href="" class="active">类型：</a></li>
+                    {if $op == 'dianying' || $op == 'dianshi' || $op == 'dongman'}
+                    {if $year}
+                    <li><a href="" class="active">地区：</a></li>
+                    {/if}
+                    {/if}
+                    {if $area}
+                    <li><a href="" class="active">年代：</a></li>
+                    {/if}
+                </ul>
+            </div>
+            <div class="content-meun ">
+                {if $setting['ziyuan'] == 1}
+                    <div class="item">
+                        <ul class="">
+
+                            <li><a href="{php echo $this->createMobileUrl('list',array('op'=>$op,'rank'=>$rank,'year'=>$_GPC['year'],'area'=>$_GPC['area']));}" class="acat " style="white-space: pre-wrap;{if !$_GPC['cat_id']}color: #ec0909{/if}">全部</a></li>
+                            {loop $cat $c}        
+                           
+                            <li><a href="{php echo $this->createMobileUrl('list',array('op'=>$op,'rank'=>$rank,'cat_id'=>$c['id'],'year'=>$_GPC['year'],'area'=>$_GPC['area']));}" class="acat" style="white-space: pre-wrap;{if $c['id'] == $_GPC['cat_id'] && $_GPC['id'] != 'all'}color: #ec0909{/if}">{$c['title']}</a></li>
+                       
+                            {/loop} 
+                        </ul>
+                    </div>   
+                    <div class="item">
+                        <ul class="">
+
+                            <li><a href="{php echo $this->createMobileUrl('list',array('op'=>$op,'rank'=>$rank,'year'=>$_GPC['year'],'area'=>''));}" class="acat " style="white-space: pre-wrap;{if !$_GPC['area']}color: #ec0909{/if}">全部</a></li>
+                            {loop $area $key $c}        
+                           
+                            <li><a href="{php echo $this->createMobileUrl('list',array('op'=>$op,'rank'=>$rank,'cat_id'=>$_GPC['cat_id'],'year'=>$_GPC['year'],'area'=>$key));}" class="acat" style="white-space: pre-wrap;{if $key == $_GPC['area'] && $_GPC['area'] != 'all'}color: #ec0909{/if}">{$c}</a></li>
+                       
+                            {/loop} 
+                        </ul>
+                    </div>
+
+                    <div class="item">
+                        <ul class="">
+
+                            <li><a href="{php echo $this->createMobileUrl('list',array('op'=>$op,'rank'=>$rank,'year'=>'','area'=>$_GPC['area']));}" class="acat " style="white-space: pre-wrap;{if !$_GPC['year']}color: #ec0909{/if}">全部</a></li>
+                            {loop $year $key $c}        
+                           
+                            <li><a href="{php echo $this->createMobileUrl('list',array('op'=>$op,'rank'=>$rank,'cat_id'=>$_GPC['cat_id'],'year'=>$c,'area'=>$_GPC['area']));}" class="acat" style="white-space: pre-wrap;{if $c == $_GPC['year'] && $_GPC['year'] != 'all'}color: #ec0909{/if}">{$c}</a></li>
+                       
+                            {/loop} 
+                        </ul>
+                    </div>
+                
+                {else}
+                <div class="item">
+                    <ul class="">
+
+                        <li><a href="{php echo $this->createMobileUrl('list',array('op'=>$op,'rank'=>$rank,'year'=>$_GPC['year'],'area'=>$_GPC['area']));}" class="acat " style="white-space: pre-wrap;{if !$_GPC['cat']}color: #ec0909{/if}">全部</a></li>
+                        {loop $cat $c}        
+                        {if $c['title'] != '收起' && $c['title'] != '更多'}
+                        {php $url = explode('cat=',$c['link'])}
+                        <li><a href="{php echo $this->createMobileUrl('list',array('op'=>$op,'rank'=>$rank,'cat'=>$url['1'],'year'=>$_GPC['year'],'area'=>$_GPC['area']));}" class="acat" style="white-space: pre-wrap;{if $url['1'] == $_GPC['cat'] && $_GPC['cat'] != 'all'}color: #ec0909{/if}">{$c['title']}</a></li>
+                        {/if}
+                        {/loop} 
+                        </ul>
+                </div>
+                {if $op == 'dianying' || $op == 'dianshi' || $op == 'dongman'}
+                {if $year}
+                <div class="item">
+                    <ul class="">
+
+                        <li><a href="{php echo $this->createMobileUrl('list',array('op'=>$op,'rank'=>$rank,'year'=>$_GPC['year'],'area'=>$_GPC['area']));}" class="acat " style="white-space: pre-wrap;{if !$_GPC['year']}color: #ec0909{/if}">全部</a></li>
+                        {loop $year $c}        
+                        {if $c['title'] != '收起' && $c['title'] != '更多'}
+                        {php $url = explode('cat=',$c['link'])}
+                        <li><a href="{php echo $this->createMobileUrl('list',array('op'=>$op,'rank'=>$rank,'cat'=>$url['1'],'year'=>$_GPC['year'],'area'=>$_GPC['area']));}" class="acat" style="white-space: pre-wrap;{if $url['1'] == $_GPC['cat'] && $_GPC['cat'] != 'all'}color: #ec0909{/if}">{$c['title']}</a></li>
+                        {/if}
+                        {/loop} 
+                        </ul>
+                </div>
+                {/if}
+                {/if}
+                {if $area}
+                <div class="item">
+                    <ul class="">
+
+                        <li><a href="{php echo $this->createMobileUrl('list',array('op'=>$op,'rank'=>$rank,'year'=>$_GPC['year'],'area'=>$_GPC['area']));}" class="acat " style="white-space: pre-wrap;{if !$_GPC['area']}color: #ec0909{/if}">全部</a></li>
+                        {loop $area $c}        
+                        {if $c['title'] != '收起' && $c['title'] != '更多'}
+                        {php $url = explode('cat=',$c['link'])}
+                        <li><a href="{php echo $this->createMobileUrl('list',array('op'=>$op,'rank'=>$rank,'cat'=>$url['1'],'year'=>$_GPC['year'],'area'=>$_GPC['area']));}" class="acat" style="white-space: pre-wrap;{if $url['1'] == $_GPC['cat'] && $_GPC['cat'] != 'all'}color: #ec0909{/if}">{$c['title']}</a></li>
+                        {/if}
+                        {/loop} 
+                        </ul>
+                </div>
+                {/if}
+                {/if}
+            </div>
+        </div>
+        <div class="hy-layout clearfix" style="margin-top: 0;">
+            <div class="hy-switch-tabs active clearfix">
+                <span class="text-muted pull-right hidden-xs">如果您喜欢本站请动动小手分享给您的朋友！</span>
+                <ul class="nav nav-tabs">
+                    <li {if $rank == 'rankhot'}class="active"{/if}><a href="{php echo $this->createMobileUrl('list',array('op'=>$op,'rank'=>'rankhot','cat'=>$_GPC['cat'],'act'=>$_GPC['act'],'year'=>$_GPC['year'],'area'=>$_GPC['area']));}">最近热映</a>
+                    </li>   
+                    {if $op != 'dianshi'}  
+                    <li {if $rank == 'createtime'}class="active"{/if}><a href="{php echo $this->createMobileUrl('list',array('op'=>$op,'rank'=>'createtime','cat'=>$_GPC['cat'],'act'=>$_GPC['act'],'year'=>$_GPC['year'],'area'=>$_GPC['area']));}">最新上映</a>
+                    </li>  
+                    {/if}
+                    {if $op == 'dianying'} 
+                    <li {if $rank == 'rankpoint'}class="active"{/if}><a href="{php echo $this->createMobileUrl('list',array('op'=>$op,'rank'=>'rankpoint','cat'=>$_GPC['cat'],'act'=>$_GPC['act'],'year'=>$_GPC['year'],'area'=>$_GPC['area']));}">最受好评</a>
+                    </li>  
+                    {/if}         
+                </ul>
+            </div>
+            <div class="hy-video-list">
+                <div class="item" id="contentList">
+                    <ul class="clearfix">
+                        {loop $data $v}
+                        {if $op > 0}
+                        {php $id = $v['id']}
+                        {/if}
+                        {if !stristr($setting['screen_name'], $v['title'])} 
+                        <div class="col-md-2 col-sm-3 col-xs-4">
+                            <a class="videopic lazy" target="view_window" href="{if $v['out_link']}{php echo str_replace("super_mov", "cyl_video_pc",$v['out_link'])}{else}{php echo $this->createMobileUrl('detail',array('op'=>$op,'url'=>$v['link'],'id'=>$id,'d_id'=>$v['id']));}{/if}" title="{$v['title']}" src="{if $v['img']}{$v['img']}{else}{php echo tomedia($v['thumb'])}{/if}" style="background: url({if $v['img']}{$v['img']}{else}{php echo tomedia($v['thumb'])}{/if}) no-repeat; background-position:50% 50%; background-size: cover;"><span class="play hidden-xs"></span><span class="score">{if $v['s2']}{$v['s2']}{else}{$v['hint']}{/if}</span></a>
+                            <div class="title">
+                                <h5 class="text-overflow"><a target="view_window" href="{if $v['out_link']}{php echo str_replace("super_mov", "cyl_video_pc",$v['out_link'])}{else}{php echo $this->createMobileUrl('detail',array('op'=>$op,'url'=>$v['link'],'id'=>$id,'d_id'=>$v['id']));}{/if}">{$v['title']}</a></h5>
+                            </div>
+                            <div class="subtitle text-muted text-muted text-overflow hidden-xs">{$v['star']}</div>
+                        </div>
+                        {/if}  
+                        {/loop}
+                    </ul>
+                </div>
+            </div>
+            <div class="hy-page clearfix">
+                
+            </div>      
+        </div>
+    </div>
+</div>
+</div>
+</div>
+
+
+{template 'foot'}
+<script>
+$(function(){
+    var page = 1;   
+    $('#contentList').dropload({
+        scrollArea : window,
+        distance:150,
+        threshold:3,
+        loadDownFn : function(me){
+            page++;
+            // 拼接HTML           
+            $.ajax({
+                type: 'GET',
+                url: '{php echo $this->createMobileUrl('list',array('op'=>$op,'rank'=>$rank,'type'=>'json','cat_id'=>$_GPC['cat_id'],'cat'=>$_GPC['cat'],'act'=>$_GPC['act'],'year'=>$_GPC['year'],'area'=>$_GPC['area']));}',
+                data:{num: page},
+                dataType: 'html',
+                success: function(data){
+                    if(data){
+                       $("#contentList ul").append(data);   
+                    // 如果没有数据
+                    }else{
+                        // 锁定
+                        me.lock();
+                        // 无数据
+                        me.noData();
+                    }
+                    // 为了测试，延迟1秒加载
+                    setTimeout(function(){
+                        // 插入数据到页面，放到最后面
+                        // 每次数据插入，必须重置
+                        me.resetload();
+                    },1000);
+                },
+                error: function(xhr, type){
+                    alert('加载失败，请重新刷新页面');
+                    // 即使加载出错，也得重置
+                    me.resetload();
+                }
+            });
+        }
+    });
+});
+</script>
+</body>
+</html>

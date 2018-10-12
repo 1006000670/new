@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="applicable-device" content="pc" />
+    <title>会员中心</title>
+    <meta name="description" content="{$settings['desc']}">
+    <meta name="keyword" content="{$settings['keyword']}">    
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <meta http-equiv="Cache-Control" content="no-transform" /> 
+    <link href="{MODULE_URL}images/css/header.css" rel="stylesheet" type="text/css" />   
+    <link href="{MODULE_URL}images/css/index.css" rel="stylesheet" type="text/css" />
+
+    <link href="{MODULE_URL}css/base.css" rel="stylesheet" type="text/css" />
+    <link href="{MODULE_URL}css/index.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="{MODULE_URL}style/css/bootstrap.min.css" />
+    <link href="{MODULE_URL}style/css/swiper.min.css" rel="stylesheet" type="text/css" >        
+    <link href="{MODULE_URL}style/css/iconfont.css" rel="stylesheet" type="text/css" />
+    <link href="{MODULE_URL}style/css/blackcolor.css" rel="stylesheet" type="text/css" />
+    <link href="{MODULE_URL}style/css/style.min.css" rel="stylesheet" type="text/css" />
+    <script src="{MODULE_URL}style/js/jquery.min.js"></script>
+    <script type='text/javascript' src="{MODULE_URL}style/js/swiper.min.js"></script>
+    <script type='text/javascript' src="{MODULE_URL}style/js/system.js"></script>
+    <script src="{MODULE_URL}images/js/layer.js" type="text/javascript"></script> 
+    <!--[if lt IE 9]><script src="{MODULE_URL}style/js/html5.js"></script><![endif]--> 
+    <link rel="stylesheet" href="{MODULE_URL}images/css/base.min.css">
+    <link rel="stylesheet" href="{MODULE_URL}images/css/common.css">      
+    <script src="{MODULE_URL}images/js/jquery-1.10.2.min.js"></script>  
+    <script src="{MODULE_URL}images/js/main.js" type="text/javascript"></script>   
+    <script src="{MODULE_URL}images/js/layer.js" type="text/javascript"></script>
+</head>
+<body class="body_1440">
+{template 'header'} 
+<div class="vip-banner"><div class="txt">150万视频<span>更全片库</span><br>更爽体验<span>加入我们！</span></div></div>
+<div class="vip-item" style="padding-top: 20px">
+    <img src="{$member['avatar']}" style="border-radius: 50%;margin:0px auto;">
+    <h2 style="text-align: center;margin: 15px">{php echo $member['nickname'] ? $member['nickname'] : substr_replace($member['phone'],'****',3,4)}</h2>
+    {if $member['end_time']}<div class="title"><h3>会员到期时间：{php echo date('Y-m-d H:i:s',$member['end_time'])}</h3></div>{else}<br>{/if}
+</div>
+
+    <div class="zhifu">
+        <div class="top">
+            <div class="fukuanlist">
+                {loop $card $key  $data}
+                <div class="list-item {if $key <1}choose{/if}">
+                    <div style="margin-bottom: 10px;line-height: normal;"><span class="price">{$data['card_fee']}</span><span>元</span></div>
+                    <div class="permonth" data-fee='30'><span>{$data['card_title']}</span></div>
+                    <div class="month" data-day='2'><span id="day">{$data['card_day']}</span>天</div>
+                </div>
+                {/loop}               
+            </div>
+        </div>
+        <div class="bottom" style="overflow: hidden;">
+            <div class="zhifutype" style="margin-bottom: 30px;font-size: 20px;font-weight: bold;">
+                <span>支付方式</span>
+            </div>
+            
+            {if $setting['payment'] == 2 || $setting['payment'] == 3} 
+            <div class="row">
+                <div class="col-md-2 text-justify">
+                </div>
+                <div class="col-md-4 text-justify">
+                        <form action="{php echo $this->createMobileUrl('Blypay');}" method="post">
+                            <input type="hidden" name="WIDout_trade_no" value="{$snid}"/>
+                            <input type="hidden" name="WIDsubject" value="开通会员"/>
+                            <input type="hidden" name="WIDtotal_fee" id="ali_fee" value=""/>
+                            <input type="hidden" name="day" id="ali_day" value=""/>
+                            <input type="hidden" name="type" value="alipay"/>
+                            
+                            <button type="submit" class="mui-media-body mui-block" style="width: 100%;border: 0px;text-align: left;padding: 0px;height: 58px;line-height: 58px;background: none;margin-left: 10px">
+                                <img src="resource/images/zfb-icon.png" alt="" class="mui-media-object mui-pull-left" style="display: flex;float: left;margin-right: 20px;width: 54px" width="10%" />
+                                <span class="btn btn-primary ">支付宝 简单、安全、快速</span>
+                            </button>
+                        </form>
+                </div>
+                <div class="col-md-4 text-justify">                    
+                        <form action="{php echo $this->createMobileUrl('Blypay');}" method="post">
+                            <input type="hidden" name="WIDout_trade_no" value="{$snid}"/>
+                            <input type="hidden" name="WIDsubject" value="开通会员"/>
+                            <input type="hidden" name="WIDtotal_fee" id="weixin_fee" value=""/>
+                            <input type="hidden" name="day" id="weixin_day" value=""/>
+                            <input type="hidden" name="type" value="wxpay"/>
+                            
+                            <button type="submit" class="mui-media-body mui-block" style="width:100%;border: 0px;text-align: left;padding: 0px;height: 58px;line-height: 58px;background: none;margin-left: 10px">
+                                <img src="resource/images/wx-icon.png" alt="" class="mui-media-object mui-pull-left" style="display: flex;float: left;margin-right: 20px;width: 54px" width="10%" />
+                                <span class="btn btn-success">微信支付 简单、安全、快速</span>
+                            </button>
+                        </form>
+                </div>
+                <div class="col-md-2 text-justify">
+                </div>
+                </div> 
+            {else}
+            <div class="zhifutype">
+                <span>请扫描微信二维码支付</span>
+            </div>
+            <div class="erweima1">
+                <div id="pay"></div>
+            </div>
+            {/if}
+        </div>
+    </div>
+<div class="character" style="margin-bottom: 0;">
+    <div class="character-m clearfix">
+        <dl>
+            <dt class="c1"></dt>
+            <dd>电视直播</dd>
+        </dl>
+        <dl>
+            <dt class="c2"></dt>
+            <dd>高清画质</dd>
+        </dl>
+        <dl>
+            <dt class="c3"></dt>
+            <dd>全网VIP大片</dd>
+        </dl>
+        <dl style="margin-right: 0">
+            <dt class="c4"></dt>
+            <dd>无广告</dd> 
+        </dl>
+    </div>
+</div>
+<a href="#" id="backToTop"><span></span> 
+<div class="backTopinfo">
+    顶部
+</div>
+</a>
+
+<div id="pay" style="text-align: center;margin: 30px;display: none;">
+	 <div style="text-align: center;padding-left: 43.5%"></div>
+     <div style="font-size: 20px;font-weight: bold;margin-top: 20px">请登录后使用微信扫码支付</div>
+</div>
+{php $link = explode("/app/",$settings['phone_url'])}
+{php $modules_bindings = pdo_get('modules_bindings', array('do' => 'member','module'=>'super_mov')); }
+<script type="text/javascript">
+    // $(".kaitong").click(function(event) {
+    //     event.preventDefault();
+    //     layer.open({
+    //         type: 1,
+    //         title:'微信二维码付款',
+    //         area: ['525px', 'auto'], //宽高
+    //         content: $('#pay')
+    //     });
+    // });
+        {if $setting['payment'] == 2 || $setting['payment'] == 3}
+            jQuery(document).ready(function($) {
+                var price=$('body').find('.choose .price').text();
+                console.log(price);
+                $("#ali_fee").val(price);
+                $("#weixin_fee").val(price);
+                $("#ali_day").val({$card['0']['card_day']});
+                $("#weixin_day").val({$card['0']['card_day']});
+            });
+            $(".list-item").click(function(event) {
+                var price=$(this).find('.price').text();
+                var days=$(this).find('#day').text();
+                console.log(price);
+                $(this).addClass('choose').siblings().removeClass('choose');
+                $(".erweima1").empty();
+                var day=$('.month').text();
+                $("#ali_fee").val(price);
+                $("#weixin_fee").val(price);
+                $("#ali_day").val(days);
+                $("#weixin_day").val(days);
+            });
+        {else}
+            jQuery(document).ready(function($) {
+                var price=$('body').find('.choose .price').text();
+                console.log(price);
+                var pay = new QRCode('pay', {   
+                text:"{$link['0']}/app/index.php?i={$_W['uniacid']}&c=entry&eid={$modules_bindings['eid']}&op=pay&day={$card['0']['card_day']}",
+                width: 240,
+                height: 240,
+                colorDark: '#000000',
+                colorLight: '#ffffff',
+                correctLevel: QRCode.CorrectLevel.H
+            });
+            pay.makeCode(txtContent.value);
+            });
+            $(".list-item").click(function(event) {
+                var price=$(this).find('.price').text();
+                var days=$(this).find('#day').text();
+                console.log(price);
+                $(this).addClass('choose').siblings().removeClass('choose');
+                $(".erweima1").empty();
+                var day=$('.month').text();
+                $('.erweima1').append('<div id="'+day+'"></div>')
+                    var pay = new QRCode(day, {       
+                    text: "{$link['0']}/app/index.php?i={$_W['uniacid']}&c=entry&eid={$modules_bindings['eid']}&op=pay&day="+days, 
+                    width: 240,
+                    height: 240,
+                    colorDark: '#000000',
+                    colorLight: '#ffffff',
+                    correctLevel: QRCode.CorrectLevel.H
+                });
+            pay.makeCode(txtContent.value);
+            });
+        {/if}
+</script>
+<!-- footer -->
+{template 'foot'}
+<!-- <div id="pay" style="display: none;width:240px;height:240px;border:2px solid #DCDCDC;margin:20px auto 20px auto;"></div> -->
+</body>
+</html>

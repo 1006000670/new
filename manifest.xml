@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns="http://www.we7.cc" versionCode="0.8,1.0">
+	<application setting="true">
+		<name><![CDATA[影视全网通]]></name>
+		<identifie><![CDATA[yingshi_byy]]></identifie>
+		<version><![CDATA[1.0]]></version>
+		<type><![CDATA[business]]></type>
+		<ability><![CDATA[影视全网通]]></ability>
+		<description><![CDATA[影视全网通]]></description>
+		<author><![CDATA[青岛淘码互联网科技]]></author>
+		<url><![CDATA[https://www.we700.cc]]></url>
+	</application>
+	<platform>
+		<subscribes>
+			<message type="user_get_card" />
+			<message type="user_del_card" />
+			<message type="user_consume_card" />
+		</subscribes>
+		<handles>
+		</handles>
+		<rule embed="false" />
+		<card embed="false" />
+	</platform>
+	<bindings>
+		<cover>
+		<entry title="首页" do="Index" state="" direct="false" />
+		<entry title="个人中心" do="member" state="" direct="false" />
+			<entry title="电视" do="tv" state="" direct="false" />
+			<entry title="搜索" do="search" state="" direct="false" />
+		</cover>
+		<menu>
+			<entry title="幻灯片管理" do="huandeng" state="" direct="false" />
+		</menu>
+	</bindings>
+	<permissions>
+	</permissions>
+	<install><![CDATA[
+CREATE TABLE IF NOT EXISTS `ims_yingshi_byy_video_pc_ad` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `uniacid` int(10) NOT NULL,
+  `thumb` varchar(1000) NOT NULL,
+  `link` varchar(1000) NOT NULL,
+  `end_time` varchar(15) NOT NULL,
+  `sort` int(5) NOT NULL,
+  `second` int(3) NOT NULL,
+  `status` int(2) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+CREATE TABLE IF NOT EXISTS `ims_yingshi_byy_video_pc_hdp` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `uniacid` int(10) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `thumb` varchar(1000) NOT NULL,
+  `link` varchar(1000) NOT NULL,
+  `out_link` varchar(1000) NOT NULL,
+  `type` varchar(15) NOT NULL,
+  `sort` int(5) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+CREATE TABLE IF NOT EXISTS `ims_yingshi_byy_video_pc_jilu` (
+  `id` int(10) unsigned NOT NULL,
+  `uniacid` int(5) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `uid` varchar(25) NOT NULL,
+  `openid` varchar(255) NOT NULL,
+  `time` varchar(15) NOT NULL,
+  `video_url` text NOT NULL,
+  `share` int(3) NOT NULL,
+  `yvideo_url` text NOT NULL,
+  `type` varchar(25) NOT NULL,
+  `index` int(2) NOT NULL,
+  `video_id` int(11) NOT NULL
+   PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+CREATE TABLE IF NOT EXISTS `ims_yingshi_byy_video_pc_site` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `uniacid` int(10) NOT NULL,
+  `url` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+CREATE TABLE IF NOT EXISTS `ims_yingshi_byy_video_pc_token` (
+  `id` int(10) unsigned NOT NULL,
+  `uniacid` int(10) NOT NULL,
+  `openid` varchar(1000) NOT NULL,
+  `token` varchar(25) NOT NULL
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+CREATE TABLE IF NOT EXISTS `ims_yingshi_byy_vip_video` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `uniacid` int(5) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `uid` varchar(25) NOT NULL,
+  `openid` varchar(255) NOT NULL,
+  `time` varchar(15) NOT NULL,
+  `video_url` text NOT NULL,
+  `share` int(3) NOT NULL,
+  `yvideo_url` text NOT NULL,
+  `type` varchar(25) NOT NULL,
+  `index` int(2) NOT NULL,
+  `video_id` int(11) NOT NULL,
+  UNIQUE KEY `id` (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=555 DEFAULT CHARSET=utf8;
+CREATE TABLE IF NOT EXISTS `ims_yingshi_byy_vip_video_ad` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `uniacid` int(10) NOT NULL,
+  `thumb` varchar(1000) NOT NULL,
+  `link` varchar(1000) NOT NULL,
+  `end_time` varchar(15) NOT NULL,
+  `sort` int(5) NOT NULL,
+  `second` int(3) NOT NULL,
+  `status` int(2) NOT NULL,
+  `type` varchar(25) DEFAULT 'dumiao',
+  `insert` int(3) DEFAULT NULL,
+  `title` varchar(5) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+CREATE TABLE IF NOT EXISTS `ims_yingshi_byy_vip_video_category` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `parentid` int(10) NOT NULL,
+  `uniacid` int(10) unsigned NOT NULL DEFAULT '0',
+  `name` varchar(20) NOT NULL,
+  `status` tinyint(3) unsigned NOT NULL DEFAULT '1',
+  `displayorder` tinyint(3) unsigned NOT NULL DEFAULT '0',
+  `url` varchar(1000) NOT NULL,
+  `is_vip` int(2) NOT NULL,
+  `is_nav` int(3) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `uniacid` (`uniacid`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+CREATE TABLE IF NOT EXISTS `ims_yingshi_byy_vip_video_forum` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `uniacid` int(5) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `openid` varchar(255) NOT NULL,
+  `time` varchar(15) NOT NULL,
+  `video_url` text NOT NULL,
+  UNIQUE KEY `id` (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+CREATE TABLE IF NOT EXISTS `ims_yingshi_byy_vip_video_hdp` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `uniacid` int(10) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `thumb` varchar(1000) NOT NULL,
+  `link` varchar(1000) NOT NULL,
+  `out_link` varchar(1000) NOT NULL,
+  `type` varchar(15) NOT NULL,
+  `sort` int(5) NOT NULL,
+  `site_name` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+CREATE TABLE IF NOT EXISTS `ims_yingshi_byy_vip_video_keyword` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `uniacid` int(11) NOT NULL,
+  `title` varchar(25) NOT NULL,
+  `card_id` varchar(25) NOT NULL,
+  `num` int(11) NOT NULL,
+  `day` int(11) NOT NULL,
+  `site_name` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+CREATE TABLE IF NOT EXISTS `ims_yingshi_byy_vip_video_keyword_id` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `openid` varchar(1000) NOT NULL,
+  `uniacid` int(11) NOT NULL,
+  `pwd` varchar(25) NOT NULL,
+  `card_id` varchar(25) NOT NULL,
+  `day` int(11) NOT NULL,
+  `status` int(2) NOT NULL,
+  `site_name` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=40 DEFAULT CHARSET=utf8;
+CREATE TABLE IF NOT EXISTS `ims_yingshi_byy_vip_video_keyword_id` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `openid` varchar(1000) NOT NULL,
+  `uniacid` int(11) NOT NULL,
+  `pwd` varchar(25) NOT NULL,
+  `card_id` varchar(25) NOT NULL,
+  `day` int(11) NOT NULL,
+  `status` int(2) NOT NULL,
+  `site_name` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=40 DEFAULT CHARSET=utf8;
+CREATE TABLE IF NOT EXISTS `ims_yingshi_byy_vip_video_manage` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `uniacid` int(11) NOT NULL,
+  `title` varchar(25) NOT NULL,
+  `thumb` varchar(1000) NOT NULL,
+  `year` varchar(25) NOT NULL,
+  `star` varchar(25) NOT NULL,
+  `type` varchar(25) NOT NULL,
+  `actor` varchar(25) NOT NULL,
+  `video_url` text NOT NULL,
+  `desc` text NOT NULL,
+  `time` varchar(25) NOT NULL,
+  `screen` varchar(25) NOT NULL,
+  `cid` int(3) NOT NULL,
+  `pid` int(3) NOT NULL,
+  `click` int(5) NOT NULL,
+  `display` int(2) NOT NULL,
+  `sort` int(5) NOT NULL,
+  `out_link` varchar(1000) NOT NULL,
+  `keyword` varchar(25) NOT NULL,
+  `password` varchar(25) NOT NULL,
+  `is_charge` int(3) NOT NULL,
+  `charge` decimal(10,2) NOT NULL,
+  `is_proved` int(3) NOT NULL,
+  `proved` decimal(10,2) NOT NULL,
+  `resources` varchar(1000) NOT NULL,
+  `rid` int(10) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+CREATE TABLE IF NOT EXISTS `ims_yingshi_byy_vip_video_member` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `uniacid` int(10) NOT NULL,
+  `phone` varchar(11) NOT NULL,
+  `password` varchar(50) NOT NULL,
+  `openid` varchar(255) NOT NULL,
+  `uid` varchar(25) NOT NULL,
+  `nickname` varchar(255) NOT NULL,
+  `avatar` varchar(1000) NOT NULL,
+  `end_time` varchar(15) NOT NULL,
+  `is_pay` int(2) NOT NULL,
+  `time` varchar(15) NOT NULL,
+  `old_time` varchar(15) NOT NULL,
+  `ip` varchar(25) NOT NULL,
+  `site_name` varchar(25) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=74 DEFAULT CHARSET=utf8;
+CREATE TABLE IF NOT EXISTS `ims_yingshi_byy_vip_video_message` (
+  `id` int(20) unsigned NOT NULL AUTO_INCREMENT,
+  `video_id` varchar(50) NOT NULL,
+  `uniacid` int(20) NOT NULL,
+  `openid` varchar(255) NOT NULL,
+  `old_id` varchar(255) NOT NULL,
+  `content` text NOT NULL,
+  `huifu` text NOT NULL,
+  `time` varchar(255) NOT NULL,
+  `status` int(2) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+CREATE TABLE IF NOT EXISTS `ims_yingshi_byy_vip_video_order` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `uniacid` int(5) NOT NULL,
+  `openid` varchar(255) NOT NULL,
+  `uid` varchar(25) NOT NULL,
+  `status` int(2) NOT NULL,
+  `fee` decimal(10,2) NOT NULL,
+  `time` varchar(15) NOT NULL,
+  `tid` varchar(255) NOT NULL,
+  `day` int(5) NOT NULL,
+  `desc` varchar(25) NOT NULL,
+  `video_id` int(10) NOT NULL,
+  `site_name` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=52 DEFAULT CHARSET=utf8;
+CREATE TABLE IF NOT EXISTS `ims_yingshi_byy_vip_video_share` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `openid` varchar(1000) NOT NULL,
+  `uniacid` int(11) NOT NULL,
+  `uid` int(11) NOT NULL,
+  `time` varchar(25) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id` (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;]]></install>
+	<uninstall><![CDATA[DROP TABLE IF EXISTS `ims_yingshi_byy_video_pc_ad`;
+DROP TABLE IF EXISTS `ims_yingshi_byy_video_pc_hdp`;
+DROP TABLE IF EXISTS `ims_yingshi_byy_video_pc_jilu`;
+DROP TABLE IF EXISTS `ims_yingshi_byy_video_pc_site`;
+DROP TABLE IF EXISTS `ims_yingshi_byy_video_pc_token`;
+DROP TABLE IF EXISTS `ims_yingshi_byy_vip_video`;
+DROP TABLE IF EXISTS `ims_yingshi_byy_vip_video_ad`;
+DROP TABLE IF EXISTS `ims_yingshi_byy_vip_video_category`;
+DROP TABLE IF EXISTS `ims_yingshi_byy_vip_video_forum`;
+DROP TABLE IF EXISTS `ims_yingshi_byy_vip_video_hdp`;
+DROP TABLE IF EXISTS `ims_yingshi_byy_vip_video_keyword`;
+DROP TABLE IF EXISTS `ims_yingshi_byy_vip_video_keyword_id`;
+DROP TABLE IF EXISTS `ims_yingshi_byy_vip_video_manage`;
+DROP TABLE IF EXISTS `ims_yingshi_byy_vip_video_member`;
+DROP TABLE IF EXISTS `ims_yingshi_byy_vip_video_message`;
+DROP TABLE IF EXISTS `ims_yingshi_byy_vip_video_order`;
+DROP TABLE IF EXISTS `ims_yingshi_byy_vip_video_share`;]]></uninstall>
+	<upgrade></upgrade>
+</manifest>

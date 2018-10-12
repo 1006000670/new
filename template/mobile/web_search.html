@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html class="ie6 ielt8"><![endif]-->
+<!--[if IE 7]><html class="ie7 ielt8"><![endif]-->
+<!--[if IE 8]><html class="ie8"><![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html>
+<!--<![endif]-->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="renderer" content="ie-stand">
+    <title>搜索片库</title>    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="{MODULE_URL}images/css/base.min.css">
+    <link rel="stylesheet" href="{MODULE_URL}images/css/common.css">
+    <link rel="stylesheet" href="{MODULE_URL}images/css/base.min.css"> 
+    <link rel="stylesheet" href="{MODULE_URL}images/css/layer.css"> 
+    <link rel="stylesheet" href="{MODULE_URL}images/css/layui.css">  
+    <link rel="stylesheet" href="{MODULE_URL}style/css/bootstrap.min.css" />
+    <link href="{MODULE_URL}style/css/swiper.min.css" rel="stylesheet" type="text/css" >        
+    <link href="{MODULE_URL}style/css/iconfont.css" rel="stylesheet" type="text/css" />
+    <link href="{MODULE_URL}style/css/blackcolor.css" rel="stylesheet" type="text/css" />
+    <link href="{MODULE_URL}style/css/style.min.css" rel="stylesheet" type="text/css" />
+    <script src="{MODULE_URL}style/js/jquery.min.js"></script>
+    <script type='text/javascript' src="{MODULE_URL}style/js/swiper.min.js"></script>
+    <script type='text/javascript' src="{MODULE_URL}style/js/system.js"></script>
+    <script src="{MODULE_URL}images/js/layer.js" type="text/javascript"></script> 
+    <!--[if lt IE 9]><script src="{MODULE_URL}style/js/html5.js"></script><![endif]--> 
+    <script type="text/javascript" src="{MODULE_URL}images/js/jquery-1.10.2.min.js"></script>  
+    <script src="{MODULE_URL}images/js/layer.js" type="text/javascript"></script>
+    <style type="text/css">
+        .v{float:right;width:14px;height:14px;overflow:hidden;background:url(images/vicon.png) no-repeat;display:inline-block;margin-top:-5px;margin-bottom:-5px;}
+        .v01{background-position:0 0;}
+        .v02{background-position:0 -16px;;}
+        .vtitle{height:35px;background:#fbede0;line-height:35px;border:1px solid #ccb6a9;margin-top:-1px;padding-left:20px;font-size:15px;color:#4d4d4d;font-family:"\5FAE\8F6F\96C5\9ED1";cursor:pointer;}
+        .vtitle em{margin:10px 10px 0 0;}
+        .vconlist{background:#9cc;}
+        .vconlist li a{height:30px;line-height:30px;padding-left:30px;display:block;font-size:14px;color:#866f67;font-family:"\5FAE\8F6F\96C5\9ED1";}
+        .vconlist li.select a,.vconlist li a:hover{color:#ed4948;text-decoration:none;}
+    </style>
+</head>
+<body class="body_1440">
+{template 'header'}
+<link rel="stylesheet" href="{MODULE_URL}images/css/client_1.css">
+<link rel="stylesheet" href="{MODULE_URL}images/css/spreadlink_mobile.css">
+<div class="page page_search"><div class="search">
+<div class="wrap_fix">
+<form  action="./index.php" method="get" role="form">
+<input type="hidden" name="i" value="{$_W['uniacid']}">  
+<input type="hidden" name="c" value="{$_GPC['c']}">  
+<input type="hidden" name="do" value="search">  
+<input type="hidden" name="m" value="{$_GPC['m']}">        
+<div class="inner_search clearfix_smile" >
+<input class="fr searchBG white_f btn" value="搜索" type="submit">
+<div class="txt"><div class="searchBG inner1_txt" >
+<div class="searchBG inner2_txt">
+<div class="searchBG inner3_txt clearfix_smile" style="height: 51px">
+<input class="fl txtInput" value="{$key}" autocomplete="off" name="key" type="text">
+</div>
+</div>
+</div>
+<div class="f_song list searchList"><ul class="inner_list"></ul></div></div>
+</div>
+</form>
+</div>
+
+</div>
+<div class="wrap_fix result" style="background: rgba(0,0,0,0.5);color: #fff">
+<ul class="resultList">
+{loop $search $data} 
+<li class="clearfix_smile">
+<a class="fl img" target="_blank" title="{$data['title']}"><img src="{php echo tomedia($data['thumb'])}" class="lazyImg" alt="{$data['title']}" style="" width="220" height="318"></a>
+<div class="txt">
+<div class="name"><a target="_blank" title=""><em class="target">{$data['title']}</em></a>&nbsp;</div>
+<ul class="info">
+<p> {$data['p1']}</p>
+<p> {$data['p2']}</p>
+<p> {$data['p3']}</p>                            
+<p> {$data['actor']}</p>                            
+<p> {$data['director']}</p>           
+</ul>
+{if $data['btn'] == '暂无播放资源'}
+<div class="handle"><a class="bdr3 btn playBtn" href="" target="_blank"><b class="icons playIcon"></b>暂无播放资源</a></div>
+{else}
+<div class="handle"><a class="bdr3 btn playBtn" href="{php echo $this->createMobileUrl('detail',array('id'=>$data['id'],'op'=>$op));}" target="_blank"><b class="icons playIcon"></b>立即播放</a></div>
+{/if}
+</div>
+</li>
+{/loop}
+{if $list || $search}
+{loop $list $data}
+{if strexists($data['type'],'动漫')}
+{php $op = 'dongman'}
+{elseif strexists($data['type'],'电视剧')}
+{php $op = 'dianshi'}
+{elseif strexists($data['type'],'综艺')}
+{php $op = 'zongyi'}
+{else}
+{php $op = 'dianying'}
+{/if}
+{if $data['title']}
+{if $setting['ziyuan'] == 1}
+  {if $data['type'] == 4}
+  {php $op = 'dongman'}
+  {elseif $data['type'] == 2}
+  {php $op = 'dianshi'}
+  {elseif $data['type'] == 3}
+  {php $op = 'zongyi'}
+  {else}
+  {php $op = 'dianying'}
+  {/if}
+  <li class="clearfix_smile">
+    <a class="fl img" target="_blank" title="{$data['title']}"><img src="{$data['img']}" class="lazyImg" alt="{$data['title']}" style="" width="220" height="318"></a>
+    <div class="txt">
+    <div class="name"><a target="_blank" title=""><em class="target">{$data['title']}</em></a>&nbsp;</div>
+    <ul class="info">
+    <p> {$data['year']}</p>
+                          
+    <p> {$data['actor']}</p>                            
+             
+    </ul>
+   
+    <div class="handle"><a class="bdr3 btn playBtn" href="{php echo $this->createMobileUrl('detail',array('op'=>$op,'d_id'=>$data['id']));}" target="_blank"><b class="icons playIcon"></b>立即播放</a></div>
+    
+    </div>
+    </li>
+{elseif $setting['ziyuan'] == 2}
+<li class="clearfix_smile">
+    <a class="fl img" target="_blank" title="{$data['title']}"><img src="{$data['img']}" class="lazyImg" alt="{$data['title']}" style="" width="220" height="318"></a>
+    <div class="txt">
+    <div class="name"><a target="_blank" title=""><em class="target">{$data['title']}</em></a>&nbsp;</div>
+    <ul class="info">
+    <p> {$data['year']}</p>
+                          
+    <p> {$data['actor']}</p>                            
+             
+    </ul>
+   
+    <div class="handle"><a class="bdr3 btn playBtn" href="{php echo $this->createMobileUrl('detail',array('d_id'=>$data['id']));}" target="_blank"><b class="icons playIcon"></b>立即播放</a></div>
+    
+    </div>
+    </li>
+{else}
+<li class="clearfix_smile">
+<a class="fl img" target="_blank" title="{$data['title']}"><img src="{$data['img']}" class="lazyImg" alt="{$data['title']}" style="" width="220" height="318"></a>
+<div class="txt">
+<div class="name"><a target="_blank" title=""><em class="target">{$data['title']}</em></a>&nbsp;</div>
+<ul class="info">
+<p> {$data['p1']}</p>
+<p> {$data['p2']}</p>
+<p> {$data['p3']}</p>                            
+<p> {$data['actor']}</p>                            
+<p> {$data['director']}</p>           
+</ul>
+{if $data['link'] || $op != 'dianying'}
+<div class="handle"><a class="bdr3 btn playBtn" href="{php echo $this->createMobileUrl('detail',array('op'=>$op));}&url={$data['link']}" target="_blank"><b class="icons playIcon"></b>立即播放</a></div>
+
+{else}
+<div class="handle"><a class="bdr3 btn playBtn" href="" target="_blank"><b class="icons playIcon"></b>暂无播放资源</a></div>
+{/if}
+</div>
+</li>
+{/if}
+{/if}
+{/loop}
+{else}
+<p style="text-align: center;font-size: 25px">未搜索到影片，请输入全称进行搜索</p>
+
+{/if}
+</ul>
+</div>
+</div>
+{template 'foot'}
+</body>
+</html>

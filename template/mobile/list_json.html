@@ -1,0 +1,14 @@
+{loop $data $v}
+{if $op > 0}
+{php $id = $v['id']}
+{/if}
+{if !stristr($setting['screen_name'], $v['title'])} 
+<div class="col-md-2 col-sm-3 col-xs-4">
+    <a class="videopic lazy" target="view_window" href="{if $v['out_link']}{php echo str_replace("super_mov", "cyl_video_pc",$v['out_link'])}{else}{php echo $this->createMobileUrl('detail',array('op'=>$op,'url'=>$v['link'],'id'=>$id,'d_id'=>$v['id']));}{/if}" title="{$v['title']}" src="{if $v['img']}{$v['img']}{else}{php echo tomedia($v['thumb'])}{/if}" style="background: url({if $v['img']}{$v['img']}{else}{php echo tomedia($v['thumb'])}{/if}) no-repeat; background-position:50% 50%; background-size: cover;"><span class="play hidden-xs"></span></a>
+    <div class="title">
+        <h5 class="text-overflow"><a target="view_window" href="{if $v['out_link']}{php echo str_replace("super_mov", "cyl_video_pc",$v['out_link'])}{else}{php echo $this->createMobileUrl('detail',array('op'=>$op,'url'=>$v['link'],'id'=>$id,'d_id'=>$v['id']));}{/if}">{$v['title']}</a></h5>
+    </div>
+    <div class="subtitle text-muted text-muted text-overflow hidden-xs">{$v['star']}</div>
+</div>
+{/if}  
+{/loop}

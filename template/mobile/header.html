@@ -1,0 +1,100 @@
+<div class="hy-head-menu"> 
+<div class="container">
+
+  <div class="row">
+    <div class="item">
+        <div class="logo">
+            <a class="hidden-sm hidden-xs" href="{php echo $this->createMobileUrl('index');}"><img src="
+			{if $this->module['config']['logo']}{php echo tomedia($this->module['config']['logo'])}{else}{MODULE_URL}images/images/logo.png{/if}" /></a>
+        </div>
+        <div class="search hidden-sm">
+            <form  id="ff-search" action="./index.php" method="get" role="form">
+                <input type="hidden" name="i" value="{$_W['uniacid']}">  
+                <input type="hidden" name="c" value="{$_GPC['c']}">  
+                <input type="hidden" name="do" value="search">  
+                <input type="hidden" name="m" value="{$_GPC['m']}">
+                <input class="form-control" placeholder="输入影片关键词..." type="text" id="ff-wd" name="key" required="">
+                <input type="submit" class="hide"><a href="javascript:" class="btns" title="搜索" onClick="$('#ff-search').submit();"><i class="icon iconfont icon-search"></i></a>
+            </form>            
+        </div>
+        <ul class="menulist hidden-xs">
+        <li id="nav-index"><a href="{php echo $this->createMobileUrl('index');}">首页</a></li>
+        <li id="nav-tv"><a href="{php echo $this->createMobileUrl('list',array('op'=>'dianying'));}">电影</a></li>
+        <li id="nav-dianying"><a href="{php echo $this->createMobileUrl('list',array('op'=>'dianshi'));}">电视剧</a></li>
+        <li id="nav-dongman"><a href="{php echo $this->createMobileUrl('list',array('op'=>'dongman'));}">动漫</a></li>
+        <li id="nav-zongyi"><a href="{php echo $this->createMobileUrl('list',array('op'=>'zongyi'));}">综艺</a></li>
+        {if $category}
+        {loop $category $v}     
+        <li id="nav-down"><a href="{if $v['url']}{$v['url']}{else}{php echo $this->createMobileUrl('list',array('op'=>$v['id'],'pid'=>$v['parentid']));}{/if}" target="_blank">{$v['name']}</a></li>
+        {/loop}  
+        {/if}     
+        <!--li id="nav-down"><a href="{php echo $this->createMobileUrl('wanneng');}" target="_blank">万能播放</a></li-->
+        </ul>
+    </div>
+</div> 
+</div> 
+</div> 
+<script type="text/javascript" src="{MODULE_URL}images/js/qrcode.min.js"></script> 
+<div class="popup" id="popup">
+    <div class="top_nav" id='top_nav'>
+        <div align="center">
+            <span>登录账号</span>
+            <a class="guanbi">X</a>
+        </div>
+    </div>
+    <div class="min">
+        <div class="tc_login">
+            <div class="left">
+                <h4 align="center">微信扫描</h4>
+                <div align="center"><div id="qrcode"></div></div>
+                <dd>
+                    <div align="center">扫描二维码登录</div>
+                </dd>
+            </div>  
+            <div class="right">
+                <form action="{php echo $this->createMobileUrl('loginpc',array('op'=>'login'))}" method="post" class="form-horizontal form"> 
+                    <div align="center" style="overflow: hidden;">
+                        <br><br><br>
+                        <i class="icon-mobile-phone"></i>
+                        <input type="text" name="data[phone]" id="name" required="required" placeholder="请输入手机号" autocomplete="off" class="input_yh">
+                        <input type="password" name="data[password]" id="password" required="required" placeholder="密码" autocomplete="off" class="input_mm">
+                    </div>
+                    <dd>
+                        <div align="center"><a href="{php echo $this->createMobileUrl('loginpc', array('op'=>'create'))}">立即注册</a></div>
+                    </dd>
+                    <div align="center">
+                        <input name="submit" type="submit" class="button" title="Sign In" value="登录" style="bottom: 0px">
+                        <input type="hidden" name="token" value="{$_W['token']}" />
+                    </div> 
+                </form>   
+                <dd>
+                    <div align="center"><a href="#" target="_blank"></a></div>
+                </dd>
+                <hr align="center" />
+            </div>      
+        </div>
+    </div>
+</div>
+<div class="show1" style="display: none;border-radius: 15px;">
+    <div style="font-size: 1.5em;color: white;background: #272727;height: 40px;line-height: 40px;text-align: center;">卡券激活</div>
+    <div class="content">
+        <div style="text-align: center;font-size: 1.5em;height: 40px;line-height: 40px;margin:10px auto;">支持会员券、观影券、代金券激活/绑定</div>
+        <div style="width: 80%;margin: 0 auto;">
+            <input type="text" id="cardInput" name="cardnum" placeholder="请输入券号" style="width: 100%; border-radius: 5px;height: 40px;line-height: 40px;font-size: 20px;padding: 3px 5px;padding-left: 10px;border:none;border:1px solid #272727;margin-bottom: 0px;box-shadow: 2px 2px 5px #DCDCDC;" />
+        </div>
+        <div style="width: 86%;padding: 10px 0;font-size: 15px;text-align: right;margin: 0 auto;margin-bottom: 20px;"></div>
+        <div class="button-contain" style="width: 60%;margin:0 auto;">
+            <button type="submit" id="cardSub" style="width: 100%;border-radius: 5px;background: #272727;color: white;height: 50px;border: none;margin-bottom: 20px;font-size: 20px;line-height: 50px;letter-spacing: 10px;box-shadow: 2px 2px 5px #DCDCDC;">提交</button>
+        </div>
+    </div>
+</div>
+<style type="text/css">
+
+body:before{
+background: url(/style/bg.jpg) center 0 no-repeat; background-attachment: fixed;background-size: cover;  
+    overflow: hidden;
+}
+@media (max-width: 767px){
+    body:before{background: url(/style/bg_app.jpg) center 0 no-repeat; background-attachment: fixed;background-size: cover;} 
+}
+</style>

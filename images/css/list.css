@@ -1,0 +1,583 @@
+.leftNav li .sTit,.leftNav li a {
+	padding-left: 25px;
+	display: block
+}
+
+.v_border_radius {
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-ms-border-radius: 2px;
+	-o-border-radius: 2px;
+	border-radius: 2px
+}
+
+.v_map {
+	background: url(http://imgwx1.2345.com/dypcimg/images/v4/v_map.png) no-repeat 
+}
+
+.col_d {
+	float: left
+}
+
+.col_c {
+	float: right
+}
+
+.leftNav {
+	background: #fff;
+	display: block;
+	padding-bottom: 10px
+}
+
+.leftNav li {
+	width: 100%;
+	float: left;
+	overflow: hidden;
+	margin-top: 2px;
+	display: inline
+}
+
+.leftNav li.liBorder { 
+	height: 1px;
+	font-size: 0;
+	line-height: 0;
+	background: #eee;
+	margin-top: 10px
+}
+
+.leftNav li .sTit {
+	font-size: 18px;
+	line-height: 44px;
+	height: 44px;
+	color: #999
+}
+
+.leftNav li a {
+	line-height: 42px;
+	color: #666;
+	font-size: 16px
+}
+
+.leftNav li a .iconfont {
+	float: left;
+	line-height: 42px;
+	text-align: center;
+	overflow: hidden;
+	height: 42px;
+	font-size: 22px;
+	padding-right: 10px;
+	color: #666
+}
+
+.leftNav li a:hover {
+	color: #666;
+	background: #fafafa
+}
+
+.leftNav li a:hover .iconfont {
+	color: #666
+}
+
+.leftNav li a.vip,.leftNav li a.vip .iconfont,.leftNav li a.vip:hover,.leftNav li a.vip:hover .iconfont {
+	color: #bf9360
+}
+
+.leftNav li.cur a {
+	border-left: 1px solid #199cfa;
+	padding-left: 24px;
+	color: #199cfa;
+	background: #fafafa
+}
+
+.leftNav li.cur a .iconfont,.leftNav li.cur a:hover {
+	color: #199cfa
+}
+
+.leftNav li.cur a.vip,.leftNav li.cur a.vip:hover {
+	border-left-color: #bf9360;
+	color: #bf9360
+}
+
+.leftNav li.cur a.vip .iconfont,.leftNav li.cur a.vip:hover .iconfont {
+	color: #bf9360
+}
+
+.selectList li {
+	width: 100%;
+	float: left;
+	_float: none;
+	_display: block;
+	padding-bottom: 16px
+}
+
+.selectList li .sTit {
+	display: block;
+	line-height: 18px;
+	height: 18px;
+	padding: 5px 0;
+	color: #666
+}
+
+.selectList li .pSelect {
+	padding-left: 45px;
+	margin-top: -28px
+}
+
+.selectList li .pSelect span {
+	display: inline-block;
+	padding: 4px 2px;
+	*position: relative;
+	*zoom: 1;
+	*display: inline
+}
+
+.selectList li .pSelect a {
+	line-height: 18px;
+	height: 18px;
+	padding: 1px 10px;
+	display: inline-block;
+	white-space: nowrap
+}
+
+.selectList li .pSelect a.cur,.selectList li .pSelect a.cur:hover {
+	background-color: #199cfa;
+	color: #fff;
+	text-decoration: none
+}
+
+.selectList li .iLine {
+	width: 100%;
+	height: 0;
+	border-top: 1px dashed #ddd;
+	overflow: hidden;
+	line-height: 0;
+	font-size: 0;
+	display: block;
+	margin-top: 12px
+}
+
+.selectList li.more {
+	display: none
+}
+
+.selectList li.liMore {
+	height: 24px;
+	position: relative;
+	overflow: hidden
+}
+
+.selectList li.liMore a {
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 0 8px;
+	height: 22px;
+	line-height: 22px;
+	font-size: 12px;
+	border: 1px solid #e5e5e5;
+	background: #fff
+}
+
+.selectList li.liMore a .iconfont {
+	font-size: 12px;
+	line-height: 22px;
+	float: left;
+	cursor: pointer
+}
+
+.selectList li.liMore a:hover {
+	background: #fafafa;
+	border-color: #ccc;
+	color: #333
+}
+
+.selectList li.vip .pSelect a.cur,.selectList li.vip .pSelect a.cur:hover {
+	background-color: #f60
+}
+
+.lucidaList {
+	background-color: #fffaf0;
+	height: 97px;
+	overflow: hidden;
+	position: relative;
+	padding-left: 28px
+}
+
+.lucidaList .lucidaTips {
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: url(http://imgwx1.2345.com/dypcimg/images/v4/list/starMap.png) -122px 0 no-repeat;
+	_background-image: url(http://imgwx1.2345.com/dypcimg/images/v4/list/starMap_ie6.png);
+	width: 20px;
+	height: 38px;
+	line-height: 16px;
+	color: #fff;
+	font-size: 14px;
+	text-align: center;
+	padding-top: 2px
+}
+
+.lucidaList a {
+	float: left;
+	text-align: center;
+	font-size: 12px;
+	height: 87px;
+	padding-top: 10px
+}
+
+.lucidaList a .pic {
+	width: 54px;
+	height: 54px;
+	overflow: hidden;
+	position: relative;
+	margin: 0 auto;
+	cursor: pointer
+}
+
+.lucidaList a .iMask {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 54px;
+	height: 54px;
+	background: url(http://imgwx1.2345.com/dypcimg/images/v4/list/starMap.png) no-repeat;
+	_background-image: url(http://imgwx1.2345.com/dypcimg/images/v4/list/starMap_ie6.png)
+}
+
+.lucidaList a span {
+	display: block;
+	height: 20px;
+	line-height: 20px;
+	padding-top: 5px;
+	overflow: hidden;
+	position: relative;
+	cursor: pointer
+}
+
+.lucidaList a.cur .iMask,.lucidaList a:hover .iMask {
+	background-position: -55px 0
+}
+
+.listCon .v_th .pTab {
+	padding: 0
+}
+
+.listCon .v_th .pTab a {
+	line-height: 34px;
+	height: 34px;
+	overflow: hidden;
+	font-size: 16px;
+	padding: 13px 9px 0;
+	margin-right: 8px;
+	display: inline
+}
+
+.listCon .v_th .aActorNews,.listCon .v_th .aLatestNews {
+	float: left;
+	margin-left: 20px;
+	color: #333;
+	line-height: 34px;
+	padding-top: 13px;
+	display: inline
+}
+
+.listCon .v_th .aActorNews em,.listCon .v_th .aLatestNews em {
+	color: #f60;
+	font-weight: 700;
+	padding: 0 4px
+}
+
+.listCon .v_th .aActorNews:hover,.listCon .v_th .aActorNews:hover em,.listCon .v_th .aLatestNews:hover,.listCon .v_th .aLatestNews:hover em {
+	color: #f30
+}
+
+.pSelected {
+	float: right;
+	height: 24px;
+	padding-top: 17px;
+	overflow: hidden
+}
+
+.pSelected .sNum,.pSelected .sTit {
+	float: left;
+	line-height: 24px;
+	color: #666;
+	padding-left: 10px
+}
+
+.pSelected .sNum em,.pSelected .sTit em {
+	color: #199cfa
+}
+
+.pSelected .sNum h1,.pSelected .sTit h1 {
+	display: inline;
+	font-weight: 100
+}
+
+.pSelected .sNum a,.pSelected .sTit a {
+	color: #666
+}
+
+.pSelected .sNum a:hover,.pSelected .sNum a:hover em,.pSelected .sNum em,.pSelected .sTit a:hover,.pSelected .sTit a:hover em {
+	color: #f30
+}
+
+.pSelected .sPoint {
+	float: left;
+	line-height: 24px;
+	margin-right: 10px;
+	display: inline;
+	color: #999
+}
+
+.pSelected .aSelected {
+	float: left;
+	border: 1px solid #e5e5e5;
+	line-height: 22px;
+	height: 22px;
+	overflow: hidden;
+	padding: 0 5px;
+	color: #333;
+	margin-right: 10px;
+	display: inline;
+	background: #fff
+}
+
+.pSelected .aSelected em {
+	float: left
+}
+
+.pSelected .aSelected .iconfont {
+	height: 21px;
+	line-height: 22px;
+	float: left;
+	display: inline;
+	overflow: hidden;
+	font-size: 12px;
+	margin-top: 1px;
+	color: #999
+}
+
+.starPicTxt,.starPicTxt .pic,.starPicTxt .txt {
+	height: 110px;
+	overflow: hidden
+}
+
+.pSelected .aSelected .iClose {
+	padding-right: 0;
+	padding-left: 3px
+}
+
+.pSelected .aSelected:hover {
+	color: #333;
+	border-color: #ccc;
+	background: #fafafa
+}
+
+.pSelected .aSelected:hover .iconfont {
+	color: #333
+}
+
+.starPicTxt {
+	float: left;
+	position: relative
+}
+
+.starPicTxt .pic {
+	width: 110px;
+	position: absolute;
+	top: 0;
+	left: 0
+}
+
+.starPicTxt .txt {
+	padding-left: 130px
+}
+
+.starPicTxt .txt .sName {
+	font-size: 28px;
+	display: block;
+	height: 30px;
+	line-height: 30px;
+	color: #333;
+	font-weight: 100
+}
+
+.starPicTxt .txt p {
+	line-height: 24px;
+	height: 72px;
+	overflow: hidden;
+	color: #666;
+	padding-top: 8px;
+	font-size: 14px
+}
+
+.starPicTxt .txt p a {
+	color: #199cfa
+}
+
+.starPicTxt .txt p a:hover {
+	color: #f30
+}
+
+.starPicTxt .txt .pNoInform {
+	position: relative;
+	color: #999
+}
+
+.starPicTxt .txt .pNoInform a {
+	position: absolute;
+	bottom: 0;
+	left: 0
+}
+
+.starAbout {
+	float: right;
+	width: 280px;
+	position: relative;
+	overflow: hidden
+}
+
+.pic180_256,.pic80 li {
+	float: left
+}
+
+.starAbout .sTit {
+	display: block;
+	line-height: 24px;
+	height: 24px;
+	font-size: 16px;
+	color: #333
+}
+
+.pic80 {
+	width: 350px;
+	padding-top: 6px
+}
+
+.pic80 li {
+	width: 80px;
+	height: 80px;
+	margin-right: 20px
+}
+
+.pic80 li .pic {
+	width: 80px;
+	height: 80px;
+	position: relative
+}
+
+.pic80 li .pic img {
+	width: 80px;
+	height: 109px
+}
+
+.pic80 li .sName {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 50px;
+	overflow: hidden;
+	background: url(http://imgwx1.2345.com/dypcimg/images/v4/mask_txtBg_50.png) 0 bottom repeat-x;
+	_background: 0 0;
+	_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://imgwx1.2345.com/dypcimg/images/v4/mask_txtBgIe6_50.png');
+	_bottom: -1px;
+	z-index: 5;
+	text-align: center;
+	color: #fff;
+	font-size: 12px
+}
+
+.pic80 li .sName em {
+	line-height: 24px;
+	height: 24px;
+	display: block;
+	padding-top: 26px
+}
+
+.noSelectResult {
+	background: url(http://imgwx1.2345.com/dypcimg/images/v4/list/noResultPic.jpg) 0 center no-repeat;
+	line-height: 28px;
+	padding: 35px;
+	color: #666
+}
+
+.noSelectResult p {
+	font-size: 16px
+}
+
+.noSelectResult p em {
+	color: #f30
+}
+
+.noSelectResult span {
+	display: block
+}
+
+.pic180_256 li {
+	width: 180px
+}
+
+.pic180_256 li .pic {
+	width: 180px;
+	height: 256px
+}
+
+.pic180_100_con {
+	float: right;
+	width: 980px
+}
+
+.body_1024 .starPicTxt {
+	width: 500px
+}
+
+.body_1024 .lucidaList a {
+	width: 63px
+}
+
+.body_1024 .noSelectResult {
+	padding-left: 240px;
+	background-position: 155px center
+}
+
+.body_1024 .pic180_100_con {
+	width: 590px
+}
+
+.body_1280 .starPicTxt {
+	width: 680px
+}
+
+.body_1280 .lucidaList a {
+	width: 72px
+}
+
+.body_1280 .noSelectResult {
+	padding-left: 280px;
+	background-position: 195px center
+}
+
+.body_1280 .pic180_100_con {
+	width: 780px
+}
+
+.body_1440 .starPicTxt {
+	width: 880px
+}
+
+.body_1440 .lucidaList a {
+	width: 80px
+}
+
+.body_1440 .noSelectResult {
+	padding-left: 360px;
+	background-position: 275px center
+}
+
+.body_1440 .pic180_100_con {
+	width: 980px
+}
+.dropload-down{text-align: center;}

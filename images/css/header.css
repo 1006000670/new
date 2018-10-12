@@ -1,0 +1,1700 @@
+.v_border_radius {
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	-ms-border-radius: 2px;
+	-o-border-radius: 2px;
+	border-radius: 2px
+}
+
+.v_map,.v_iNew_word {
+	background: url(../images/v_map.png) 0 0 no-repeat
+}
+
+.body_1024 .inner,.body_1280 .inner,.body_1440 .inner {
+	*zoom: 1
+}
+
+.body_1024 .inner:before,.body_1280 .inner:before,.body_1440 .inner:before,.body_1024 .inner:after,.body_1280 .inner:after,.body_1440 .inner:after {
+	content: "";
+	display: block
+}
+
+.body_1024 .inner:after,.body_1280 .inner:after,.body_1440 .inner:after {
+	height: 0;
+	visibility: hidden;
+	font-size: 0;
+	line-height: 0;
+	clear: both
+}
+
+.footer .footerStatement .pTxt .line {
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	vertical-align: middle
+}
+
+@font-face {
+	font-family:'iconfont';src:url("//at.alicdn.com/t/font_ehqxdlg4qna8m2t9.eot");src:url("../fonts/font_ehqxdlg4qna8m2t9.eot") format("embedded-opentype"),url("../fonts/font_ehqxdlg4qna8m2t9.woff") format("woff"),url("../fonts/font_ehqxdlg4qna8m2t9.ttf") format("truetype"),url("../fonts/font_ehqxdlg4qna8m2t9.svg#iconfont") format("svg")
+}
+
+.iconfont {
+	font-family: "iconfont" !important;
+	font-size: 16px;
+	font-style: normal;
+	-webkit-font-smoothing: antialiased;
+	-webkit-text-stroke-width: 0.2px;
+	-moz-osx-font-smoothing: grayscale;
+	padding-right: 3px
+}
+
+.body_1024 .inner {
+	width: 1000px
+}
+
+.body_1024 .wrapper {
+	min-width: 1000px
+}
+
+.body_1024 .wrapper .main .show_1024 {
+	display: inline
+}
+
+.body_1024 .wrapper .main .hide_1024 {
+	display: none
+}
+
+.body_1280 .inner {
+	width: 1180px
+}
+
+.body_1280 .wrapper {
+	min-width: 1180px
+}
+
+.body_1280 .wrapper .main .show_1280 {
+	display: inline
+}
+
+.body_1280 .wrapper .main .hide_1280 {
+	display: none
+}
+
+.body_1440 .inner {
+	width: 1380px
+}
+
+.body_1440 .wrapper {
+	min-width: 1380px
+}
+
+.body_1440 .wrapper .main .show_1440 {
+	display: inline
+}
+
+.body_1440 .wrapper .main .hide_1440 {
+	display: none
+}
+
+.header {
+	position: relative;
+	*zoom: 1;
+	z-index: 100;
+	height: 115px;
+	border-bottom: 1px solid #eee;
+	background: #fff;
+	*float: left
+}
+
+.header .headerFun {
+	background: #fff;
+	position: relative;
+	border-bottom: 1px solid #eee;
+	height: 69px
+}
+
+.header .headerFun .headerCon {
+	position: relative
+}
+
+.header .headerFun .aHeaderLogo {
+	background: url(../images/header_logo.png) 0 0 no-repeat;
+	width: 130px;
+	height: 30px;
+	overflow: hidden;
+	float: left;
+	margin-top: 20px
+}
+
+.header .headerFun .headerRightIvy {
+	width: 295px;
+	height: 53px;
+	overflow: hidden;
+	position: absolute;
+	right: 0;
+	top: 8px
+}
+
+.header .headerFun .headerRightIvy img {
+	width: 100%;
+	height: 100%;
+	vertical-align: top;
+	display: block
+}
+
+.header .headerFun .headerSearch {
+	width: 452px;
+	float: left;
+	margin-top: 16px;
+	display: inline;
+	padding-right: 80px;
+	position: relative;
+	margin-left: 208px
+}
+
+.header .headerFun .headerSearch .searchBorder {
+	border: 2px solid #3af;
+	border-right: 0;
+	height: 22px;
+	line-height: 22px;
+	position: relative;
+	padding: 5px 10px;
+	overflow: hidden
+}
+
+.header .headerFun .headerSearch .searchBorder .searchInput {
+	color: #999;
+	line-height: 22px;
+	height: 22px;
+	overflow: hidden;
+	border: 0 none;
+	background: none;
+	width: 100%;
+	display: block;
+	font-family: 'Microsoft YaHei'
+}
+
+.header .headerFun .headerSearch .aSearchBtn {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 80px;
+	height: 36px;
+	line-height: 36px;
+	text-align: center;
+	background: #3af;
+	font-weight: 700;
+	color: #fff;
+	font-size: 14px
+}
+
+.header .headerFun .headerSearch .aSearchBtn .iconfont {
+	color: #fff;
+	font-size: 14px;
+	font-weight: 100
+}
+
+.header .headerFun .headerSearch .aSearchBtn:hover {
+	color: #fff
+}
+
+.header .headerFun .headerSearch .association {
+	width: 100%;
+	overflow: hidden;
+	background: #fff;
+	position: absolute;
+	top: 36px;
+	left: 0;
+	z-index: 499;
+	clear: both;
+	display: none
+}
+
+.header .headerFun .headerSearch .association .forie {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 0;
+	background: transparent
+}
+
+.header .headerFun .headerSearch .association .associationBorder {
+	border: 1px solid #ddd;
+	border-top: 0 none;
+	position: relative;
+	z-index: 10
+}
+
+.header .headerFun .headerSearch .todayHotSearch {
+	height: auto
+}
+
+.header .headerFun .headerSearch .todayHotSearch ul {
+	background: #fff url(../images/hotsearchbg.png) right 0 no-repeat;
+	z-index: 1;
+	position: relative
+}
+
+.header .headerFun .headerSearch .todayHotSearch ul li {
+	width: 100%;
+	height: 32px;
+	line-height: 32px;
+	overflow: hidden;
+	font-size: 14px;
+	float: left;
+	cursor: pointer
+}
+
+.header .headerFun .headerSearch .todayHotSearch ul li a {
+	color: #333;
+	width: 100%;
+	height: 32px;
+	display: block;
+	overflow: hidden;
+	background: url(../images/fillbg.png) 0 0 repeat
+}
+
+.header .headerFun .headerSearch .todayHotSearch ul li a:hover,.header .headerFun .headerSearch .todayHotSearch ul li a.cur {
+	color: #333;
+	text-decoration: none;
+	filter: progid:DXImageTransform.Microsoft.gradient(enabled='true', startColorstr='#7feeeeee', endColorstr='#7feeeeee');
+	background: rgba(238,238,238,0.5)
+}
+
+.header .headerFun .headerSearch .todayHotSearch ul li span {
+	float: left;
+	cursor: pointer;
+	vertical-align: middle
+}
+
+.header .headerFun .headerSearch .todayHotSearch ul li .iNum {
+	float: left;
+	width: 28px;
+	line-height: 32px;
+	height: 32px;
+	text-align: center;
+	color: #999;
+	font-weight: 700;
+	font-style: italic
+}
+
+.header .headerFun .headerSearch .todayHotSearch ul li .iHighlight {
+	color: #ff6600
+}
+
+.header .headerFun .headerSearch .todayHotSearch ul li .v_iNew_word {
+	float: left;
+	display: inline;
+	margin: 11px 0 0 3px
+}
+
+.header .headerFun .headerSearch .searchAssociate {
+	height: auto
+}
+
+.header .headerFun .headerSearch .searchAssociate li {
+	line-height: 32px;
+	height: 32px;
+	overflow: hidden;
+	float: left;
+	width: 100%;
+	display: inline
+}
+
+.header .headerFun .headerSearch .searchAssociate li a {
+	display: block;
+	padding: 0 10px;
+	color: #666;
+	font-size: 14px;
+	white-space: nowrap
+}
+
+.header .headerFun .headerSearch .searchAssociate li a strong {
+	color: #333;
+	font-weight: 700
+}
+
+.header .headerFun .headerSearch .searchAssociate li a:hover {
+	text-decoration: none;
+	color: #666;
+	background-color: #f5f5f5
+}
+
+.header .headerFun .headerSearch .searchAssociate li a:hover strong {
+	color: #333
+}
+
+.header .headerFun .headerSearch .searchAssociate li .sStyle {
+	padding-left: 10px
+}
+
+.header .headerFun .headerSearch .searchAssociate li.liPic {
+	padding: 10px 0;
+	height: 80px;
+	overflow: hidden;
+	position: relative;
+	margin-bottom: 1px;
+	background-color: #fff9f5
+}
+
+.header .headerFun .headerSearch .searchAssociate li.liPic .txt {
+	padding: 0 10px 0 80px;
+	position: relative;
+	height: 80px;
+	overflow: hidden;
+	cursor: pointer
+}
+
+.header .headerFun .headerSearch .searchAssociate li.liPic .txt .pTit {
+	font-size: 16px;
+	color: #666;
+	line-height: 24px;
+	height: 24px;
+	overflow: hidden;
+	white-space: nowrap;
+	cursor: pointer
+}
+
+.header .headerFun .headerSearch .searchAssociate li.liPic .txt .pTit .sName {
+	color: #ff6600;
+	font-weight: 700;
+	cursor: pointer
+}
+
+.header .headerFun .headerSearch .searchAssociate li.liPic .txt .pIntro {
+	line-height: 24px;
+	height: 24px;
+	overflow: hidden;
+	white-space: nowrap;
+	color: #999;
+	text-overflow: ellipsis;
+	font-size: 12px;
+	cursor: pointer
+}
+
+.header .headerFun .headerSearch .searchAssociate li.liPic .txt .pIntro em {
+	color: #2371c8;
+	cursor: pointer
+}
+
+.header .headerFun .headerSearch .searchAssociate li.liPic a.aLink {
+	position: absolute;
+	z-index: 10;
+	height: 100%;
+	width: 100%;
+	display: block;
+	overflow: hidden;
+	background: url(../images/fillbg.png) 0 0 repeat;
+	top: 0;
+	left: 0;
+	padding: 0;
+	cursor: pointer
+}
+
+.header .headerFun .headerSearch .searchAssociate li.liPic a.aLink:hover {
+	background: none
+}
+
+.header .headerFun .headerSearch .searchAssociate li.liPic .pic {
+	position: absolute;
+	width: 60px;
+	height: 80px;
+	left: 10px;
+	top: 10px;
+	overflow: hidden;
+	z-index: 5;
+	background: #f5f5f5 url(../images/defaultpicbg_mini.png) 50% 50% no-repeat
+}
+
+.header .headerFun .headerSearch .searchAssociate li.liPic .iPlayIcon {
+	background: url(../images/fillbg.png) 0 0 repeat;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 20;
+	display: block;
+	height: 100%;
+	width: 100%;
+	opacity: 0;
+	-moz-transition: opacity 0.3s;
+	-webkit-transition: opacity 0.3s;
+	-o-transition: opacity 0.3s;
+	transition: opacity 0.3s
+}
+
+.header .headerFun .headerSearch .searchAssociate li.liPic .iPlayIcon em {
+	height: 100%;
+	width: 100%;
+	display: block;
+	cursor: pointer
+}
+
+.header .headerFun .headerSearch .searchAssociate li.liPic:hover .iPlayIcon,.header .headerFun .headerSearch .searchAssociate li.liPic.hover .iPlayIcon {
+	background: rgba(0,0,0,0.15);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#33000000,endColorstr=#33000000);
+	opacity: 1
+}
+
+.header .headerFun .headerSearch .searchAssociate li.liPic:hover .iPlayIcon em,.header .headerFun .headerSearch .searchAssociate li.liPic.hover .iPlayIcon em {
+	background: url(../images/v_playbtn_s.png) center center no-repeat;
+	_background: url(../images/v_playbtn_s_ie6.png) center center no-repeat
+}
+
+.header .headerFun .headerSearch .searchAssociate li.liPic .v_blue_btn {
+	padding: 0;
+	width: 96px;
+	height: 26px;
+	line-height: 26px;
+	display: block;
+	font-size: 12px;
+	color: #fff;
+	overflow: hidden;
+	position: absolute;
+	bottom: 0;
+	left: 80px;
+	-webkit-radius: 2px;
+	-moz-radius: 2px;
+	-ms-radius: 2px;
+	-o-radius: 2px;
+	border-radius: 2px;
+	background-clip: border-box;
+	background: #33aaff
+}
+
+.header .headerFun .headerSearch .searchAssociate li.liPic .v_blue_btn .iconfont {
+	position: relative;
+	float: left;
+	display: inline;
+	height: 26px;
+	overflow: hidden;
+	margin: 0 3px 0 12px
+}
+
+.header .headerFun .headerSearch .searchAssociate li.liPic .v_blue_btn_center {
+	text-align: center
+}
+
+.header .headerFun .headerSearch .searchAssociate li.liPic .v_blue_btn_center .iconfont {
+	display: none
+}
+
+.header .headerMenu {
+	height: 44px;
+	overflow: hidden;
+	background: #0d9aff 
+}
+
+.header .headerMenu p {
+	display: inline
+}
+
+.header .headerMenu p a {
+	float: left;
+	line-height: 40px;
+	height: 40px;
+	padding: 2px 0;
+	display: inline;
+	position: relative;
+	color: #fff;
+	white-space: nowrap
+}
+
+.header .headerMenu p a .iNew,.header .headerMenu p a .iHot {
+	background: url(../images/spr.png) 0 0 no-repeat;
+	width: 23px;
+	height: 12px;
+	overflow: hidden;
+	position: absolute;
+	top: 0;
+	right: 0
+}
+
+.header .headerMenu p a .iNew {
+	background-position: 0 0
+}
+
+.header .headerMenu p a .iHot {
+	background-position: -24px 0
+}
+
+.header .headerMenu p a:hover {
+	color: #3af
+}
+
+.header .headerMenu p a.cur {
+	padding-bottom: 0;
+	border-bottom: 2px solid #3af;
+	color: #3af;
+	font-weight: 700
+}
+
+.header .headerMenu p.headerMenu_left {
+	float: left
+}
+
+.header .headerMenu p.headerMenu_left a {
+	font-size: 16px
+}
+
+.header .headerMenu p.headerMenu_right {
+	float: right
+}
+
+.header .headerMenu p.headerMenu_right a {
+	margin-left: 15px
+}
+
+.header .headerSubMenu {
+	height: 44px;
+	overflow: hidden
+}
+
+.header .headerSubMenu p {
+	float: left;
+	line-height: 44px;
+	height: 44px
+}
+
+.header .headerSubMenu p a {
+	float: left;
+	margin-right: 15px;
+	display: inline;
+	color: #666
+}
+
+.header .headerSubMenu p a:hover {
+	color: #ff3300
+}
+
+.header .headerSubMenu p a.cur,.header .headerSubMenu p a.cur:hover {
+	color: #3af;
+	font-weight: 700
+}
+
+.subHeader {
+	z-index: 490
+}
+
+:root .header .headerFun .todayHotSearch a:hover,:root .header .headerFun .todayHotSearch a.cur {
+	filter: none
+}
+
+:root .header .headerSearch .searchAssociate .liFirst:hover .iPlayIcon {
+	filter: none
+}
+
+.body_1024 .header .headerFun .headerActivityIvy {
+	display: none
+}
+
+.body_1024 .header .headerFun .headerRightIvy {
+	display: none
+}
+
+.body_1024 .header .headerFun .headerSearch {
+	margin-left: 166px
+}
+
+.body_1024 .header .headerMenu p.headerMenu_left a {
+	margin-right: 16px
+}
+
+.body_1280 .header .headerFun .headerActivityIvy {
+	display: none
+}
+
+.body_1280 .header .headerFun .headerSearch {
+	margin-left: 118px
+}
+
+.body_1280 .header .headerMenu p.headerMenu_left a {
+	margin-right: 30px
+}
+
+.body_1440 .header .headerFun .headerSearch {
+	margin-left: 208px
+}
+
+.body_1440 .header .headerMenu p.headerMenu_left a {
+	margin-right: 30px
+}
+
+.footer {
+	color: #666;
+	z-index: 1;
+	position: relative;
+	font-size: 12px;
+	margin-top: 20px
+}
+
+.footer a {
+	color: #666
+}
+
+.footer a:hover {
+	color: #ff3300
+}
+
+.footer .footerStatement {
+	border-top: 1px solid #ddd;
+	color: #999;
+	overflow: hidden;
+	padding: 30px 0 40px
+}
+
+.footer .footerStatement a {
+	color: #999
+}
+
+.footer .footerStatement a:hover {
+	color: #ff3300
+}
+
+.footer .footerStatement .pTxt {
+	text-align: center;
+	padding-top: 5px
+}
+
+.footer .footerStatement .pTxt .line {
+	width: 1px;
+	height: 13px;
+	background: #a7a7a7;
+	overflow: hidden;
+	margin: 0 17px
+}
+
+.footer .footerStatement .copyRight {
+	text-align: center;
+	padding-top: 5px
+}
+
+.footer .footerStatement .copyRight img {
+	display: inline-block;
+	vertical-align: middle;
+	padding-right: 5px
+}
+
+.footer .footerStatement .friendLinks {
+	position: relative;
+	line-height: 24px;
+	height: 24px;
+	overflow: hidden;
+	margin: 0 auto;
+	width: 1000px
+}
+
+.footer .footerStatement .friendLinks .sTit {
+	width: 65px;
+	white-space: nowrap;
+	position: absolute;
+	top: 0;
+	left: 0
+}
+
+.footer .footerStatement .friendLinks .linksCon {
+	padding-left: 50px;
+	height: 24px;
+	overflow: hidden
+}
+
+.footer .footerStatement .friendLinks .linksCon .view {
+	position: relative;
+	height: 24px
+}
+
+.footer .footerStatement .friendLinks .linksCon .txt {
+	position: absolute;
+	top: 0
+}
+
+.footer .footerStatement .friendLinks .linksCon p {
+	height: 24px;
+	overflow: hidden
+}
+
+.footer .footerStatement .friendLinks .linksCon p a {
+	margin-left: 15px;
+	white-space: nowrap;
+	float: left;
+	line-height: 24px;
+	height: 24px;
+	overflow: hidden;
+	display: inline
+}
+
+.body_1024 .footer .footerCon dl.video {
+	width: 240px
+}
+
+.body_1024 .footer .footerCon dl.video span {
+	width: 66px
+}
+
+.body_1024 .footer .footerCon dl.video span.wSpan {
+	width: 102px
+}
+
+.body_1024 .footer .footerCon dl.business {
+	width: 220px
+}
+
+.body_1024 .footer .footerCon dl.advice {
+	width: 220px
+}
+
+.body_1024 .footer .footerCon dl.downLoad {
+	width: 150px
+}
+
+.body_1280 .footer .footerCon dl.video {
+	width: 280px
+}
+
+.body_1280 .footer .footerCon dl.video span {
+	width: 82px
+}
+
+.body_1280 .footer .footerCon dl.video span.wSpan {
+	width: 110px
+}
+
+.body_1280 .footer .footerCon dl.business {
+	width: 270px
+}
+
+.body_1280 .footer .footerCon dl.advice {
+	width: 270px
+}
+
+.body_1280 .footer .footerCon dl.downLoad {
+	width: 160px
+}
+
+.body_1440 .footer .footerCon dl.video {
+	width: 345px
+}
+
+.body_1440 .footer .footerCon dl.video span {
+	width: 102px
+}
+
+.body_1440 .footer .footerCon dl.video span.wSpan {
+	width: 118px
+}
+
+.body_1440 .footer .footerCon dl.business {
+	width: 325px
+}
+
+.body_1440 .footer .footerCon dl.advice {
+	width: 325px
+}
+
+.body_1440 .footer .footerCon dl.downLoad {
+	width: 160px
+}
+
+.ivyAuto,.ivyAuto-pic {
+	width: 100%;
+	overflow: hidden;
+	text-align: center
+}
+
+.ivyAuto-pic img {
+	width: 100%
+}
+
+.ivy-user-defined {
+	position: relative;
+	*zoom: 1;
+	overflow: hidden
+}
+
+.ivy180 {
+	width: 180px;
+	overflow: hidden;
+	margin: 0 auto
+}
+
+.ivy200_center {
+	width: 200px;
+	overflow: hidden;
+	margin-left: -10px
+}
+
+.ivy200 {
+	width: 200px;
+	overflow: hidden;
+	margin: 0 auto
+}
+
+.ivy238 {
+	width: 238px;
+	overflow: hidden;
+	margin: 0 auto
+}
+
+.ivy240 {
+	width: 240px;
+	overflow: hidden;
+	margin: 0 auto
+}
+
+.ivy250 {
+	width: 250px;
+	overflow: hidden;
+	margin: 0 auto
+}
+
+.ivy354 {
+	width: 354px;
+	overflow: hidden;
+	margin: 0 auto
+}
+
+.ivy420 {
+	width: 420px;
+	overflow: hidden;
+	margin: 0 auto
+}
+
+.ivy640 {
+	width: 640px;
+	overflow: hidden;
+	margin: 0 auto
+}
+
+.ivy720 {
+	width: 720px;
+	overflow: hidden;
+	margin: 0 auto
+}
+
+.ivy728 {
+	width: 728px;
+	overflow: hidden;
+	margin: 0 auto
+}
+
+.ivy940 {
+	width: 940px;
+	overflow: hidden;
+	margin: 0 auto
+}
+
+.ivy960 {
+	width: 960px;
+	overflow: hidden;
+	margin: 0 auto
+}
+
+.ivy1000 {
+	width: 1000px;
+	overflow: hidden;
+	margin: 0 auto
+}
+
+.ivy1024 {
+	width: 1024px;
+	overflow: hidden;
+	margin: 0 auto
+}
+
+.ivy250-mix {
+	width: 250px;
+	overflow: hidden;
+	margin: 0 auto
+}
+
+.ivy250-mix .pic116_81 {
+	clear: both;
+	overflow: hidden;
+	*zoom: 1
+}
+
+.ivy250-mix .pic116_81 .item {
+	float: left;
+	position: relative;
+	margin-left: 4px;
+	margin-top: 4px
+}
+
+.ivy250-mix .pic116_81 .pic {
+	width: 116px;
+	height: 81px;
+	position: relative;
+	border: 1px solid #ddd
+}
+
+.ivy250-mix .pic116_81 .item img {
+	display: block;
+	width: 116px;
+	height: 81px;
+	overflow: hidden
+}
+
+.ivy250-mix .pic116_81 .item .tit {
+	width: 110px;
+	padding: 0 3px;
+	height: 20px;
+	line-height: 20px;
+	background-color: #000;
+	position: absolute;
+	top: 62px;
+	left: 0;
+	color: #fff;
+	text-align: center;
+	font-size: 12px;
+	cursor: pointer;
+	word-break: break-all;
+	overflow: hidden
+}
+
+.ivyAuto img,.ivyAuto-pic img,.ivy180 img,.ivy200 img,.ivy240 img,.ivy250 img,.ivy354 img,.ivy640 img,.ivy720 img,.ivy940 img,.ivy960 img,.ivy1000 img,.ivy1024 img {
+	display: block;
+	vertical-align: top;
+	margin: 0 auto
+}
+
+.ivyAuto .sTit,.ivyAuto-pic .sTit {
+	background: url(../images/titpngbg.png) 0 0 repeat;
+	_background: none;
+	_filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F000000,endColorstr=#7F000000);
+	width: 100%;
+	height: 24px;
+	line-height: 24px;
+	overflow: hidden;
+	text-indent: 10px;
+	color: #fff;
+	margin-top: -24px;
+	display: block;
+	position: relative
+}
+
+.ivyAuto a,.ivyAuto-pic a,.ivyAuto a:hover,.ivyAuto-pic a:hover {
+	color: #fff;
+	text-decoration: none
+}
+
+.ivyFixed_Top {
+	position: fixed;
+	top: 0;
+	_position: absolute;
+	_top: expression(eval(document.documentElement.scrollTop));
+	z-index: 300
+}
+
+.baiduSearchIvy {
+	border: 1px solid #38F;
+	overflow: hidden;
+	position: relative;
+	height: 49px
+}
+
+.baiduSearchIvy iframe {
+	margin-top: -1px
+}
+
+.baiduSearchIvy_pic {
+	overflow: hidden;
+	position: relative;
+	height: 58px;
+	border-bottom: 1px solid #38F
+}
+
+.baiduSearchIvy_pic iframe {
+	margin-top: -1px;
+	height: 60px
+}
+
+.ivy_mod .th_ivy {
+	line-height: 40px;
+	height: 40px;
+	overflow: hidden;
+	padding-bottom: 3px
+}
+
+.ivy_mod .th_ivy .sIvyMark {
+	float: left;
+	font-size: 20px
+}
+
+.ivy_mod .tb_ivy {
+	width: 100%;
+	overflow: hidden;
+	position: relative
+}
+
+.ivy_mod_border {
+	border: 1px solid #e5e5e5;
+	padding: 7px 5px 5px
+}
+
+.ivy_mod_border .th_ivy .sIvyMark {
+	font-size: 18px
+}
+
+.hotPromotion {
+	border: 1px solid #b2dfff;
+	background-color: #f7fcff;
+	height: 42px;
+	overflow: hidden;
+	padding: 10px 0 10px 10px
+}
+
+.hotPromotion .sTit {
+	float: left;
+	width: 53px;
+	height: 42px
+}
+
+.hotPromotion .sTit em {
+	height: 39px;
+	width: 42px;
+	background-color: #33aaff;
+	line-height: 18px;
+	text-align: center;
+	padding-top: 3px;
+	color: #fff;
+	float: left;
+	-webkit-radius: 2px;
+	-moz-radius: 2px;
+	-ms-radius: 2px;
+	-o-radius: 2px;
+	border-radius: 2px
+}
+
+.hotPromotion .sTit .iArrow {
+	border: 5px solid #f7fcff;
+	border-left-color: #33aaff;
+	width: 0;
+	height: 0;
+	font-size: 0;
+	overflow: hidden;
+	line-height: 0;
+	float: left;
+	margin: 16px 0 0 0;
+	display: inline
+}
+
+.hotPromotion .hotPromotionCon {
+	overflow: hidden;
+	float: left;
+	width: 1024px
+}
+
+.hotPromotion .oursIvy {
+	width: 270px;
+	float: left
+}
+
+.hotPromotion .oursIvy li {
+	width: 120px;
+	float: left;
+	overflow: hidden;
+	height: 20px;
+	padding: 0 0 4px 10px
+}
+
+.hotPromotion .oursIvy li a {
+	padding: 1px 0;
+	display: block;
+	line-height: 18px;
+	height: 18px;
+	color: #333;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis
+}
+
+.hotPromotion .oursIvy li a em {
+	font-size: 12px;
+	width: 14px;
+	float: left;
+	text-align: center;
+	font-family: arial,simsun,sans-serif;
+	padding: 0 4px;
+	font-weight: 700;
+	color: #616060
+}
+
+.hotPromotion .oursIvy li a:hover {
+	background-color: #616060;
+	color: #fff;
+	text-decoration: none
+}
+
+.hotPromotion .oursIvy li a:hover em {
+	color: #fff
+}
+
+#down-browser-jiasu {
+	position: relative;
+	background-color: #fffde1;
+	border-bottom: 1px solid #a5d3ef
+}
+
+#down-browser-jiasu .wp {
+	margin: 0 auto;
+	height: 25px;
+	line-height: 26px;
+	padding: 3px 0 2px;
+	color: #666;
+	font-size: 14px;
+	position: relative;
+	overflow: hidden;
+	text-align: center;
+	*padding-top: 5px;
+	*height: 23px;
+	_padding-top: 8px;
+	_height: 20px
+}
+
+#down-browser-jiasu .icon {
+	display: inline-block;
+	width: 16px;
+	height: 17px;
+	overflow: hidden;
+	background: url(../images/down-browser-jiasu140909.jpg) no-repeat;
+	vertical-align: top;
+	margin: 4px 6px 0 0;
+	*margin-top: -2px
+}
+
+#down-browser-jiasu .lnk {
+	color: #f60;
+	text-decoration: none;
+	cursor: pointer
+}
+
+#down-browser-jiasu .lnk:hover {
+	color: #f30;
+	text-decoration: underline
+}
+
+#down-browser-jiasu .btn {
+	display: inline-block;
+	width: 94px;
+	height: 25px;
+	line-height: 25px;
+	overflow: hidden;
+	background: url(../images/down-browser-jiasu140909.jpg) -75px 0 no-repeat;
+	vertical-align: top;
+	margin: 0px 10px 0;
+	*margin-top: -6px
+}
+
+#down-browser-jiasu .btn:hover {
+	background-position: -200px 0
+}
+
+#down-browser-jiasu .closed {
+	position: absolute;
+	right: 1px;
+	top: 5px;
+	width: 21px;
+	height: 21px;
+	background: url(../images/down-browser-jiasu140909.jpg) -25px 0 no-repeat
+}
+
+#down-browser-jiasu .closed:hover {
+	background-position: -50px 0
+}
+
+.globalTopIvy {
+	height: 40px;
+	overflow: hidden
+}
+
+.globalTopIvyCon {
+	display: block;
+	height: 40px;
+	overflow: hidden;
+	background-repeat: no-repeat;
+	background-position: center center;
+	margin: 0 auto;
+	position: relative
+}
+
+.globalTopIvy .aGlobalTopIvyLink {
+	width: 100%;
+	height: 40px;
+	overflow: hidden;
+	display: block;
+	line-height: 40px
+}
+
+.globalTopIvy .aGlobalTopIvyClose {
+	opacity: 0.4;
+	filter: alpha(opacity=40);
+	width: 19px;
+	height: 19px;
+	overflow: hidden;
+	background-color: #000;
+	position: absolute;
+	right: 0;
+	top: 10px
+}
+
+.globalTopIvy .aGlobalTopIvyClose i {
+	background-image: url(../images/newheadermap.png);
+	background-repeat: no-repeat;
+	background-position: -118px -39px;
+	width: 11px;
+	height: 11px;
+	margin: 4px 0 0 4px;
+	float: left;
+	display: inline
+}
+
+.globalTopIvy .aGlobalTopIvyClose:hover {
+	opacity: 0.6;
+	filter: alpha(opacity=60)
+}
+
+.ad_tear_angle {
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 700;
+	display: none;
+	width: 80px;
+	height: 80px;
+	overflow: hidden
+}
+
+.ad_tear_angle .pic {
+	width: 80px;
+	height: 80px;
+	overflow: hidden;
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	display: block;
+	background-color: transparent
+}
+
+.adMainBg {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 20;
+	zoom: 1;
+	background-position: center top;
+	background-repeat: no-repeat;
+	display: none
+}
+
+.rightBottomPop {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	z-index: 650;
+	width: 318px;
+	background-color: #fff;
+	height: 255px;
+	border: 1px solid #dddddd;
+	_position: absolute;
+	_bottom: auto;
+	_top: expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-260));
+	-webkit-box-shadow: 0 0 3px 3px rgba(0,0,0,0.1);
+	-moz-box-shadow: 0 0 3px 3px rgba(0,0,0,0.1);
+	-o-box-shadow: 0 0 3px 5px rgba(0,0,0,0.1);
+	box-shadow: 0 0 3px 3px rgba(0,0,0,0.1)
+}
+
+.rightBottomPop .th {
+	height: 30px;
+	line-height: 30px;
+	background-color: #fff;
+	position: relative
+}
+
+.rightBottomPop .th .sMark {
+	float: left;
+	font-size: 14px;
+	display: inline;
+	color: #fff;
+	line-height: 9999px;
+	overflow: hidden;
+	position: absolute;
+	width: 98px;
+	height: 31px;
+	top: -12px;
+	left: 7px;
+	background: url(../images/todayrecommendedtxt.png) 0 0 no-repeat;
+	_background-image: none;
+	_filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src="../images/todayRecommendedTxt.png")
+}
+
+.rightBottomPop .th .aClose {
+	width: 40px;
+	height: 30px;
+	overflow: hidden;
+	float: right;
+	line-height: 30px
+}
+
+.rightBottomPop .th .aClose .iconfont {
+	width: 40px;
+	text-align: center;
+	line-height: 30px;
+	font-size: 12px;
+	padding: 0;
+	color: #666
+}
+
+.rightBottomPop .th .aClose:hover .iconfont {
+	color: #333
+}
+
+.rightBottomPop .tb {
+	height: 230px;
+	overflow: hidden;
+	position: relative;
+	width: 318px
+}
+
+.rightBottomPop .pic320 {
+	width: 320px
+}
+
+.rightBottomPop .pic320 li {
+	width: 320px;
+	float: left
+}
+
+.rightBottomPop .pic320 li .pic {
+	width: 320px;
+	height: 106px;
+	overflow: hidden
+}
+
+.rightBottomPop .pic300 {
+	width: 300px;
+	margin: 0 auto;
+	float: none
+}
+
+.rightBottomPop .pic300 li {
+	width: 300px;
+	float: left;
+	height: auto
+}
+
+.rightBottomPop .pic300 li .pic {
+	width: 300px;
+	height: 100px;
+	overflow: hidden
+}
+
+.rightBottomPop .pic145 {
+	border-top: 0 none;
+	height: 123px;
+	overflow: hidden;
+	width: 318px;
+	background-color: #fff
+}
+
+.rightBottomPop .pic145 li {
+	width: 145px;
+	float: left;
+	margin: 10px 0 0 9px;
+	display: inline
+}
+
+.rightBottomPop .pic145 li .pic {
+	width: 145px;
+	height: 82px
+}
+
+.rightBottomPop .pic145 li .pic .sName em {
+	font-size: 12px;
+	padding-left: 2px
+}
+
+.rightBottomPop .pic145 li .sDes {
+	overflow: hidden;
+	height: 25px
+}
+
+.rightBottomPop .pic145 li .sDes a {
+	display: block;
+	line-height: 22px;
+	height: 22px;
+	padding-top: 3px;
+	color: #666;
+	font-family: \5FAE\8F6F\96C5\9ED1,\5b8b\4f53
+}
+
+.rightBottomPop .pic145 li .sDes a:hover {
+	color: #666;
+	text-decoration: none
+}
+
+.ad_countdown {
+	z-index: 200;
+	display: none;
+	overflow: hidden;
+	position: absolute;
+	left: 50%;
+	top: 0
+}
+
+.ad_countdown .aPic {
+	width: 100%;
+	display: block;
+	overflow: hidden
+}
+
+.ad_countdown .aPic img {
+	width: 100%;
+	display: block;
+	vertical-align: top
+}
+
+.ad_countdown .aClose {
+	position: absolute;
+	top: 0;
+	right: 0;
+	background: rgba(0,0,0,0.5);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7F000000,endColorstr=#7F000000);
+	padding: 0 0 0 7px;
+	line-height: 24px;
+	height: 24px;
+	font-size: 14px;
+	color: #bbb;
+	float: right
+}
+
+.ad_countdown .aClose i {
+	background: #000;
+	color: #fff;
+	float: right;
+	padding: 0 7px
+}
+
+.ad_countdown .aClose em {
+	color: #ff4c4c;
+	font-size: 16px;
+	cursor: pointer
+}
+
+.ad_countdown .aClose:hover {
+	text-decoration: none;
+	color: #fff
+}
+
+.ad_countdown .aClose:hover em {
+	color: #ff4c4c
+}
+
+.body_1024 #down-browser-jiasu {
+	min-width: 1000px
+}
+
+.body_1024 #down-browser-jiasu .wp {
+	width: 1000px
+}
+
+.body_1024 .globalTopIvy {
+	min-width: 1000px
+}
+
+.body_1024 .globalTopIvy .globalTopIvyCon {
+	width: 1000px
+}
+
+.body_1024 .hotPromotion .hotPromotionCon {
+	width: 895px
+}
+
+.body_1024 .hotPromotion .oursIvy {
+	display: none
+}
+
+.body_1024 .ivy354 {
+	display: none
+}
+
+.body_1024 .ivy1024 {
+	width: 1000px;
+	float: none
+}
+
+.body_1024 .ad_tear_angle {
+	display: none
+}
+
+.body_1024 .ad_countdown {
+	width: 1000px;
+	margin-left: -500px;
+	display: none
+}
+
+.body_1024 .ivy-joint-right {
+	display: none
+}
+
+.body_1280 #down-browser-jiasu {
+	min-width: 1180px
+}
+
+.body_1280 #down-browser-jiasu .wp {
+	width: 1180px
+}
+
+.body_1280 .globalTopIvy {
+	min-width: 1180px
+}
+
+.body_1280 .globalTopIvy .globalTopIvyCon {
+	width: 1180px
+}
+
+.body_1280 .hotPromotion .oursIvy {
+	display: none
+}
+
+.body_1280 .ivy354 {
+	display: none
+}
+
+.body_1280 .ivy1024 {
+	float: none
+}
+
+.body_1280 .ad_tear_angle {
+	display: block
+}
+
+.body_1280 .ad_countdown {
+	width: 1180px;
+	margin-left: -590px
+}
+
+.body_1280 .ivy-joint-right {
+	display: none
+}
+
+.body_1440 #down-browser-jiasu {
+	min-width: 1380px
+}
+
+.body_1440 #down-browser-jiasu .wp {
+	width: 1380px
+}
+
+.body_1440 .globalTopIvy {
+	min-width: 1380px
+}
+
+.body_1440 .globalTopIvy .globalTopIvyCon {
+	width: 1380px
+}
+
+.body_1440 .ivy354 {
+	float: right
+}
+
+.body_1440 .ivy1024 {
+	float: left
+}
+
+.body_1440 .ad_tear_angle {
+	display: block
+}
+
+.body_1440 .adMainBg {
+	display: block
+}
+
+.body_1440 .ad_countdown {
+	width: 1380px;
+	margin-left: -690px
+}
+
+.body_1440 .ivy-joint-left {
+	float: left
+}
+
+.body_1440 .ivy-joint-right {
+	float: right
+}
+
+a:hover {
+	text-decoration: none
+}
+
+.inner {
+	margin-left: auto;
+	margin-right: auto
+}
+
+html {
+	_background-image: url(about:blank);
+	_background-attachment: fixed
+}
+
+.v_map,.v_iNew_word {
+	background: url(../images/v_map.png) 0 0 no-repeat
+}
+
+.v_iNew_word {
+	background-position: 0 -19px;
+	width: 15px;
+	height: 10px;
+	line-height: 0;
+	font-size: 0;
+	overflow: hidden;
+	display: inline-block;
+	position: relative
+}
+
+.v_white_arrow {
+	background: url(../images/v_arrowmap.png) 0 -40px no-repeat; 
+	width: 16px;
+	height: 8px;
+	overflow: hidden;
+	font-size: 0;
+	line-height: 0;
+	position: absolute;
+	z-index: 10
+}
+
+.global-header {
+	z-index: 300;
+	background: #fff;
+	min-width: 1000px;
+	border-bottom: 1px solid #eee
+}
+
+.body_1024 {
+	min-width: 1000px
+}
+
+.body_1024 .menu .item {
+	margin-right: 1px
+}
+
+.body_1024 .menu .item a {
+	font-size: 14px
+}
+
+.body_1280 {
+	min-width: 1180px
+}
+
+.body_1280 .menu .item {
+	margin-right: 10px
+}
+
+.body_1280 .menu .item a {
+	font-size: 14px
+}
+
+.body_1440 {
+	min-width: 1380px
+}

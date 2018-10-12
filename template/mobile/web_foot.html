@@ -1,0 +1,59 @@
+<div class="hy-gototop hidden-sm hidden-xs">
+	   <ul class="item clearfix">
+	    <li><a href="{php echo $this->createMobileUrl('member');}" title="会员中心"><i class="icon iconfont icon-member1"></i></a></li>
+	    <li><a href="#" title="留言求片"><i class="icon iconfont icon-comment"></i></a></li>
+		<li><a href="#" title="观看记录"><i class="icon iconfont icon-record1"></i></a></li> 
+	    <li class="codehover"><a href="javascript:()" title="二维码"><i class="icon iconfont icon-code1"></i></a> 
+	     <div class="code clearfix">
+	      <p class="margin-0">
+		  <img class="pic-responsive" src="{php echo tomedia($settings['ewm'])}" alt="扫描二维码">
+		  </p>
+	     </div>
+	    </li>
+	    <li><a data-toggle="tooltip" data-placement="top" class="" href="javascript:scroll(0,0)" title="返回顶部"><i class="icon iconfont icon-uparrow"></i></a></li>   </ul>
+	  </div>
+	
+	  <div class="seenote" style="position: fixed;height: 500px;width:265px;background: rgba(0,0,0,.5);bottom:50px;right: 100px; border-top:1px solid black;box-shadow:1px 1px 5px #272727;display: none;">
+                        {if $jilu}
+                        <div class="list" style="height: 460px;overflow-y: auto;">
+                        {loop $jilu $v}
+                            <div class="section" style="display: flex;padding: 5px 10px;margin-bottom: 5px;">                                
+                                <div style="height: 30px;flex: 1;padding-left: 10px;">
+                                <a href="{if $v['index']}{php echo $this->createMobileUrl('detail',array('op'=>$v['type'],'url'=>$v['video_url']));}{else}{php echo $this->createMobileUrl('detail',array('op'=>$v['type'],'id'=>$v['video_id'],'jishu'=>$v['share'],'url'=>$v['yvideo_url'],'link'=>$v['video_url']));}{/if}">
+                                    <div>影片名称:{$v['title']} {if $v['share']} 第{$v['share']}集{/if} 继续观看</div>
+                                </a>
+                                </div>
+                            </div>
+                        {/loop}                           
+                        </div>
+                        {else}
+                        <div class="nohistory" style="text-align: center;height: 460px;">
+                            <div style="text-align: center;margin-top: 200px;">暂无观看记录<div class="tip">请<span class="btn"><i class="btn_log">登录</i></span></div></div>
+                        </div>
+                        {/if}
+                        <div class="clear" style="height: 40px;border-top: 1px solid #DCDCDC;text-align: center;line-height: 40px;">清空所有历史记录</div>
+                    </div>
+<script type="text/javascript">
+	//观看记录显示
+	$(".icon-record1,.seenote").mouseover(function() {
+		$(".seenote").show();
+	})
+	$(".seenote").mouseout(function() {
+		$(".seenote").hide();
+	});
+
+</script>
+
+<div class="container">
+	<div class="row">
+		<div class="hy-footer clearfix">
+        <p style="padding: 0 4px;text-align:center" class="container-fluid">{$settings['mianze']} 
+<div style="display:none;">
+<script>
+ {$settings['tongji']}
+</script>
+</div>
+</p>
+		</div>
+	</div>
+</div>

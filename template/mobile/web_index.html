@@ -1,0 +1,545 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta http-equiv="cache-control" content="no-siteapp">
+<title>{$settings['title']}</title>
+<meta name="keywords" content="{$settings['keyword']}">
+<meta name="description" content="{$settings['desc']}">
+<link rel="stylesheet" href="{MODULE_URL}style/css/bootstrap.min.css" />
+<link href="{MODULE_URL}style/css/swiper.min.css" rel="stylesheet" type="text/css" >		
+<link href="{MODULE_URL}style/css/iconfont.css" rel="stylesheet" type="text/css" />
+<link href="{MODULE_URL}style/css/blackcolor.css" rel="stylesheet" type="text/css" />
+<link href="{MODULE_URL}style/css/style.min.css" rel="stylesheet" type="text/css" />
+<script src="{MODULE_URL}style/js/jquery.min.js"></script>
+<script type='text/javascript' src="{MODULE_URL}style/js/swiper.min.js"></script>
+<script type='text/javascript' src="{MODULE_URL}style/js/system.js"></script>
+<script src="{MODULE_URL}images/js/layer.js" type="text/javascript"></script> 
+<!--[if lt IE 9]><script src="{MODULE_URL}style/js/html5.js"></script><![endif]-->
+
+</head>
+<body class="index">
+ {template 'header'} 
+<div class="container">
+
+  <div class="row">
+ 
+		<div class="hy-layout clearfix">
+			<div class="col-lg-7 col-md-6 col-sm-12">
+				<div class="swiper-container hy-slide">
+					<div class="swiper-wrapper">
+						{if $hdp}
+						{loop $hdp $key $v}
+						<div class="swiper-slide">
+							<div class="hy-video-slide">
+								<a class="videopic" href="{if $v['out_link']}{$v['out_link']}{else}{php echo $this->createMobileUrl('detail',array('op'=>$v['type']));}&url={$v['link']}{/if}" title="{$v['title']}" style="padding-top: 60%; background: url({php echo tomedia($v['thumb'])})  no-repeat; background-position:50% 50%; background-size: cover;">	
+									<span class="title">{$v['title']}</span>
+							    </a>
+							</div>	            					
+						</div>	
+						{/loop} 	
+{else}
+<div class="swiper-slide">
+							<div class="hy-video-slide">
+								<a class="videopic" href="###" title="幻灯片" style="padding-top: 60%; background: url(../addons/yingshi_byy/images/images/hdp1.jpg)  no-repeat; background-position:50% 50%; background-size: cover;">	
+									<span class="title">幻灯片</span>
+							    </a>
+							</div>	            					
+						</div>	
+						<div class="swiper-slide">
+							<div class="hy-video-slide">
+								<a class="videopic" href="###" title="幻灯片" style="padding-top: 60%; background: url(../addons/yingshi_byy/images/images/hdp2.jpg)  no-repeat; background-position:50% 50%; background-size: cover;">	
+									<span class="title">幻灯片2</span>
+							    </a>
+							</div>	            					
+						</div>	
+						<div class="swiper-slide">
+							<div class="hy-video-slide">
+								<a class="videopic" href="###" title="幻灯片" style="padding-top: 60%; background: url(../addons/yingshi_byy/images/images/hdp3.jpg)  no-repeat; background-position:50% 50%; background-size: cover;">	
+									<span class="title">幻灯片3</span>
+							    </a>
+							</div>	            					
+						</div>	
+						<div class="swiper-slide">
+							<div class="hy-video-slide">
+								<a class="videopic" href="###" title="幻灯片" style="padding-top: 60%; background: url(../addons/yingshi_byy/images/images/hdp4.jpg)  no-repeat; background-position:50% 50%; background-size: cover;">	
+									<span class="title">幻灯片4</span>
+							    </a>
+							</div>	            					
+						</div>	
+{/if}						
+					</div>
+					<div class="swiper-button-next hidden-xs">
+						<i class="icon iconfont icon-right"></i>
+					</div>
+					<div class="swiper-button-prev hidden-xs">
+						<i class="icon iconfont icon-back"></i>
+					</div>
+					<div class="swiper-pagination">
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-5 col-md-6 col-sm-12 padding-0">
+				<div class="hy-index-menu clearfix">
+					<div class="item">
+						<ul class="clearfix">
+							<li><a href="{php echo $this->createMobileUrl('list',array('op'=>'dianying','rank'=>'createtime'));}"><i class="icon iconfont icon-menu1 text-color"></i><span>最新电影</span></a></li>							
+							<li><a href="{php echo $this->createMobileUrl('list',array('op'=>'dianshi'));}"><i class="icon iconfont icon-ic_mymatch_ranking text-color"></i><span>剧集排行</span></a></li>
+							<li><a href="javascript:;" {if !$member}onclick="alert('你好，请先登陆！');" {else} id="jihuo"{/if}><i class="icon iconfont icon-update text-color"></i><span>券卡激活</span></a></li>
+							{if $member}
+							<li><a href="{php echo $this->createMobileUrl('member');}"><i class="icon iconfont icon-member1 text-color"></i><span>{php echo $member['nickname'] ? $member['nickname'] : substr_replace($member['phone'],'****',3,4)}&nbsp;|&nbsp;<i class='btn_reg' id='logout'>注销</i></span></a></li>
+							{else}
+							<li><a href="javascript:;" id="login"><i class="icon iconfont icon-member1 text-color"></i><span>会员登录</span></a></li>
+							{/if}
+						</ul>
+					</div> 
+				</div>
+				<div class="hy-index-tags hidden-md clearfix">
+					<div class="item">
+						<ul class="clearfix">
+						<li><a href="./index.php?i=1&amp;c=entry&amp;op=dianying&amp;rank=rankhot&amp;cat=100&amp;do=list&amp;m=yingshi_byy">爱情</a></li>
+					<li><a href="./index.php?i=1&amp;c=entry&amp;op=dianying&amp;rank=rankhot&amp;cat=106&amp;do=list&amp;m=yingshi_byy">动作</a></li>
+					<li><a href="./index.php?i=1&amp;c=entry&amp;op=dianying&amp;rank=rankhot&amp;cat=102&amp;do=list&amp;m=yingshi_byy">恐怖</a></li>
+					<li><a href="./index.php?i=1&amp;c=entry&amp;op=dianying&amp;rank=rankhot&amp;cat=104&amp;do=list&amp;m=yingshi_byy">科幻</a></li>							
+			<li><a href="./index.php?i=1&amp;c=entry&amp;op=dianying&amp;rank=rankhot&amp;cat=112&amp;do=list&amp;m=yingshi_byy">剧情</a></li>
+				<li><a href="/index.php?i=1&amp;c=entry&amp;op=dianying&amp;rank=rankhot&amp;cat=105&amp;do=list&amp;m=yingshi_byy">犯罪</a></li>
+														<li><a href="./index.php?i=1&amp;c=entry&amp;op=dianying&amp;rank=rankhot&amp;cat=113&amp;do=list&amp;m=yingshi_byy">奇幻</a></li>
+														<li><a href="./index.php?i=1&amp;c=entry&amp;op=dianying&amp;rank=rankhot&amp;cat=108&amp;do=list&amp;m=yingshi_byy">战争</a></li>						</ul>
+					</div>
+				</div>
+				<div class="hy-right-qrcode hidden-sm hidden-xs">
+					<div class="item">
+						<dl class="clearfix">							
+							<dt><img src="{php echo tomedia($settings['ewm'])}"></dt>
+							<dd>
+							<h4>扫描二维码“手机看大片”</h4>
+							<p class="text-muted">
+								也可以分享到朋友圈哦！
+							</p>
+							<p class="margin-0 text-muted">
+								{$_W['siteroot']}							
+							</p>
+							</dd>
+						</dl>
+					</div>
+				</div>
+			</div>
+		</div>		
+		<script type="text/javascript">
+		//窗口效果
+		var token = '{$_W['token']}';
+		$("#gengduo").hover(
+		  function () {
+		    $("#category").fadeIn(400)
+		  },
+		  function () {
+		    $("#category").hide();
+		  }
+		);
+		//登录按钮点击弹窗
+		var i = 0;
+		$("#login").click(function(){
+			console.log(i)
+		    $("#gray").show();
+		    $("#popup").show();//查找ID为popup的DIV show()显示#gray    
+		    tc_center();
+		    if (i < 1) {
+		    	login(); 
+		    }   
+		    setInterval('member()',3000); 
+		    i++;
+		});
+		$("#user").hover(function(){
+		            $(".user").fadeIn(200);
+		        },function(){
+		           $(".user").fadeOut(200);
+		        })
+		function login(){
+		    $.post("{php echo $this->createMobileUrl('qrcode')}&token="+token,function(data){
+		        {php $link = explode("/app/",$settings['phone_url'])}
+		        var qrcode = new QRCode('qrcode', {
+		            text: '{$link['0']}/app/index.php?i={$_W['uniacid']}&c=entry&do=login&m=cyl_video_pc&token='+token, 
+		            width: 150,
+		            height: 150,
+		            colorDark: '#000000',
+		            colorLight: '#ffffff',
+		            correctLevel: QRCode.CorrectLevel.H
+		        });
+		        qrcode.makeCode(txtContent.value);     
+		    });       
+		}
+		function member(){
+		    $.getJSON("{php echo $this->createMobileUrl('login')}&token="+token,function(data){
+		        if (data == 1) {
+		            window.location.reload();
+		        }
+		    });       
+		}
+		//观看记录显示
+		$("#jilu").hover(function() {
+		    $(".seenote").fadeIn(200);
+		}, function() {
+		    $(".seenote").fadeOut(200);
+		});
+		$(".section").hover(function() {
+		    $(this).css('background', '#5E5E5E');
+		}, function() {
+		    $(this).css('background', '#272727');
+		});
+		$(".clear").click(function() {
+		    $(".list").html("").hide();
+		    $(".nohistory").show();
+		});
+		//卡券激活弹窗
+		$("#jihuo").click(function(){
+		    layer.open({
+		      type: 1,
+		      shade: [0.5,"#000"],
+		      area: ['532px', 'auto'],
+		      title: false, //不显示标题
+		      content: $('.show1') //捕获的元素，注意：最好该指定的元素要存放在body最外层，否则可能被其它的相对元素所影响
+		    });
+		});
+		//卡券提交请求
+		$("#cardSub").click(function() {
+		    var cardnum=$("#cardInput").val();
+		    if(cardnum==""||cardnum==null){
+		        layer.open({
+		            content:'输入不能为空'
+		        })
+		    }else{
+		        var index;
+		        $.ajax({
+		            url: "{php echo $this->createMobileUrl('member',array('op'=>'card'))}",
+		            type: 'GET',
+		            dataType: 'json',
+		            data: {card: cardnum},
+		            beforeSend:function(){
+		                index=layer.load(1);
+		            },
+		            success:function(data){  
+		                console.log(data.login)              
+		                if(data.card == 2){
+		                    layer.open({
+		                        content:data.data
+		                    })
+		                }else{
+		                    layer.open({
+		                        content:"激活成功",
+		                        end:function(){
+		                            window.location.reload();
+		                        }
+		                    })
+
+		                }
+		            },            
+		            complete:function(){
+		                layer.close(index);
+		            }
+		        }) 
+		    }
+		});
+		//登录提交验证
+		$("#name").blur(function() {
+		    var value=$(this).val();
+		    if(value==""||value==null){
+		        $(this).next().text('用户名不能为空');
+		    }else{
+		        $(this).next().text("");
+		    }
+		});
+		$("#pwd").blur(function() {
+		    var value=$(this).val();
+		    if(value==""||value==null){
+		        $(this).next().text('密码不能为空');
+		    }else{
+		        $(this).next().text("");
+		    }
+		});
+		$("#subbtn").click(function() {
+		    $(".login-contain input").trigger('blur');
+		    var nameval=$("#name").val();
+		    var pwdval=$("#pwd").val();
+		    var name=$("#nametip").text();
+		    var pwd=$("#pwdtip").text();
+		    var index;
+		    if((name==""||name==null)&&(pwd==""||pwd==null)){
+		        $.ajax({
+		            url: '{MODULE_URL}template/mobile/testLogin.json',
+		            type: 'GET',
+		            dataType: 'json',
+		            data: {param1: nameval,param2:pwdval},
+		            beforeSend:function(){
+		                index=layer.load(1);
+		            },
+		            success:function(data){
+		                console.log(data);
+		                if(data.loginResult==1){
+		                    $(".guanbi").trigger('click');
+		                    $("#user").empty().html("<i class='btn_log'><a href='javascript:;'>"+data.username+"</a></i>&nbsp;|&nbsp;<i class='btn_reg' id='logout'>注销</i>");
+		                }else if(data.loginResult==2){
+		                    layer.open({
+		                        content: data.errorMsg
+		                    })
+		                }
+		            },
+		            error:function(XMLHttpRequest, textStatus, errorThrown){
+		                console.log(errorThrown);
+		            },
+		            complete:function(){
+		                layer.close(index);
+		            }
+		        })
+		    }
+		});
+		//注销点击事件
+		$("#logout").click(function() {
+		    $.get("{php echo $this->createMobileUrl('loginout')}",function(data){
+		        window.location.reload();
+		    });       
+		});
+		// $('#gengduo').on('hover', function(){  
+		//   $("#category").show();
+		//   // content: '<ul class="layui-nav layui-nav-tree">{loop $category $v}<li class="layui-nav-item"><a href="{if $v['url']}{$v['url']}{else}{php echo $this->createMobileUrl('list',array('op'=>$v['id'],'pid'=>$v['parentid']));}{/if}">{$v['name']}</a></li>{/loop}</ul>'
+		//   // });
+		// },function () {
+		//     $("#category").hide();
+		// });
+
+		//点击关闭按钮
+		$("a.guanbi").click(function(){
+		    $("#gray").hide();
+		    $("#popup").hide();//查找ID为popup的DIV hide()隐藏
+		}) 
+
+		//窗口水平居中
+		$(window).resize(function(){
+		    tc_center();
+		});
+
+		function tc_center(){
+		    var _top=($(window).height()-$(".popup").height())/2;
+		    var _left=($(window).width()-$(".popup").width())/2;
+		    
+		    $(".popup").css({top:_top,left:_left});
+		}   
+		</script>
+<!--抢先看-->
+		{if $data}
+		<div class="hy-layout clearfix">
+			<div class="hy-video-head">
+				<h3 class="margin-0"><i class="icon iconfont icon-update text-color"></i> 抢先看</h3>
+				<ul class="pull-right">
+					<!-- <li class="active"><a href="{php echo $this->createMobileUrl('list',array('op'=>'dianying','rank'=>'rankhot'));}" class="text-muted"> <i class="icon iconfont icon-right"></i></a></li> -->
+				</ul>
+			</div>
+			<div class="clearfix">
+				<div class="hy-video-list cleafix">
+					<div class="item">
+					    {loop $data $key $v}
+                        {if $key < 12}
+						<div class="col-md-2 col-sm-3 col-xs-4">
+							<a class="videopic lazy" href="{if $v['out_link']}{php echo str_replace("super_mov", "cyl_video_pc",$v['out_link'])}{else}{php echo $this->createMobileUrl('detail',array('id'=>$v['id'],'op'=>$v['cid']));}{/if}" title="{$v['title']}" src="images/59a4cf6660e2f.jpg" style="background: url({php echo tomedia($v['thumb'])}) no-repeat; background-position:50% 50%; background-size: cover;"><span class="play hidden-xs"></span><span class="score">{$v['s2']}</span></a>
+							<div class="title">
+								<h5 class="text-overflow"><a href="{if $v['out_link']}{php echo str_replace("super_mov", "cyl_video_pc",$v['out_link'])}{else}{php echo $this->createMobileUrl('detail',array('id'=>$v['id'],'op'=>$v['cid']));}{/if}">{$v['title']}</a></h5>
+							</div>
+							<div class="subtitle text-muted text-muted text-overflow hidden-xs">{$v['desc']}</div>
+						</div>
+						{/if}
+                        {/loop}
+			</div></div></div>
+		</div>
+		{/if}
+		<!--抢先看-->
+		<!--电影-->
+		<div class="hy-layout clearfix">
+			<div class="hy-video-head">
+				<ul class="pull-right">
+					<li class="active"><a href="{php echo $this->createMobileUrl('list',array('op'=>'dianying','rank'=>'rankhot'));}" class="text-muted">更多 <i class="icon iconfont icon-right"></i></a></li>
+				</ul>
+				<h3 class="margin-0"><i class="icon iconfont icon-film text-color"></i>热播电影</h3>
+			</div>
+			<div class="clearfix">
+						{loop $dianying $key $v}
+						{if $key < 18}
+						<div class="col-md-2 col-sm-3 col-xs-4">
+							<a class="videopic lazy" href="{php echo $this->createMobileUrl('detail',array('op'=>'dianying','d_id'=>$v['id'],'url'=>$v['link']));}" title="{$v['title']}" src="{$v['img']}" style="background: url({$v['img']}) no-repeat; background-position:50% 50%; background-size: cover;"><span class="play hidden-xs"></span><span class="score">{$v['s2']}</span></a>
+							<div class="title">
+								<h5 class="text-overflow"><a href="{php echo $this->createMobileUrl('detail',array('op'=>'dianying','d_id'=>$v['id'],'url'=>$v['link']));}">{$v['title']}</a></h5>
+							</div>
+							<div class="subtitle text-muted text-muted text-overflow hidden-xs">{$v['star']}</div>
+						</div>
+						{/if}
+						{/loop} 
+			</div>
+		</div>		<!--电影-->
+		<!--电视剧-->
+		<div class="hy-layout clearfix">
+			<div class="hy-video-head">
+				<ul class="pull-right">
+					<li class="active"><a href="{php echo $this->createMobileUrl('list',array('op'=>'dianshi','rank'=>'rankhot'));}" class="text-muted">更多 <i class="icon iconfont icon-right"></i></a></li>
+				</ul>
+				<h3 class="margin-0"><i class="icon iconfont icon-show text-color"></i>热播电视剧</h3>
+			</div>
+			<div class="clearfix">
+
+						{loop $dianshi $key $v}
+						{if $key < 18}
+						<div class="col-md-2 col-sm-3 col-xs-4">
+							<a class="videopic lazy" href="{php echo $this->createMobileUrl('detail',array('op'=>'dianshi','d_id'=>$v['id'],'url'=>$v['link']));}" title="{$v['title']}" src="{$v['img']}" style="background: url({$v['img']}) no-repeat; background-position:50% 50%; background-size: cover;"><span class="play hidden-xs"></span><span class="score">{$v['hint']}</span></a>
+							<div class="title">
+								<h5 class="text-overflow"><a href="{php echo $this->createMobileUrl('detail',array('op'=>'dianshi','d_id'=>$v['id'],'url'=>$v['link']));}">{$v['title']}</a></h5>
+							</div>
+							<div class="subtitle text-muted text-muted text-overflow hidden-xs">{$v['star']}</div>
+						</div>
+						{/if}
+						{/loop} 
+
+				<div class="hy-video-footer visible-xs clearfix">
+					<a href="./tv.php?m=/dianshi/list.php?cat=all%26pageno=1" class="text-muted">查看更多 <i class="icon iconfont icon-right pull-right"></i></a>
+				</div>
+			</div>
+		</div>		<!--电视剧-->
+		<!--综艺-->
+		<div class="hy-layout clearfix">
+			<div class="hy-video-head">
+				<ul class="pull-right">
+					<li class="active"><a href="{php echo $this->createMobileUrl('list',array('op'=>'zongyi','rank'=>'rankhot'));}" class="text-muted">更多 <i class="icon iconfont icon-right"></i></a></li>
+				</ul>
+				<h3 class="margin-0"><i class="icon iconfont icon-mallanimation text-color"></i>综艺强档</h3>
+			</div>
+			<div class="clearfix">
+				  {loop $zongyi $key $v}
+						{if $key < 18}
+						<div class="col-md-2 col-sm-3 col-xs-4">
+							<a class="videopic lazy" href="{php echo $this->createMobileUrl('detail',array('op'=>'zongyi','d_id'=>$v['id'],'url'=>$v['link']));}" title="{$v['title']}" src="{$v['img']}" style="background: url({$v['img']}) no-repeat; background-position:50% 50%; background-size: cover;"><span class="play hidden-xs"></span><span class="score">{$v['hint']}</span></a>
+							<div class="title">
+								<h5 class="text-overflow"><a href="{php echo $this->createMobileUrl('detail',array('op'=>'zongyi','d_id'=>$v['id'],'url'=>$v['link']));}">{$v['title']}</a></h5>
+							</div>
+							<div class="subtitle text-muted text-muted text-overflow hidden-xs">{$v['star']}</div>
+						</div>
+						{/if}
+						{/loop} 
+			</div>
+		</div>		<!--综艺-->
+		<!--动漫-->
+		<div class="hy-layout clearfix">
+			<div class="hy-video-head">
+				<ul class="pull-right">
+					<li class="active"><a href="{php echo $this->createMobileUrl('list',array('op'=>'dongman','rank'=>'rankhot'));}" class="text-muted">更多 <i class="icon iconfont icon-right"></i></a></li>
+				</ul>
+				<h3 class="margin-0"><i class="icon iconfont icon-mallanimation text-color"></i>超人气动漫</h3>
+			</div>
+			<div class="clearfix">
+				  {loop $dongman $key $v}
+						{if $key < 18}
+						<div class="col-md-2 col-sm-3 col-xs-4">
+							<a class="videopic lazy" href="{php echo $this->createMobileUrl('detail',array('op'=>'dongman','d_id'=>$v['id'],'url'=>$v['link']));}" title="{$v['title']}" src="{$v['img']}" style="background: url({$v['img']}) no-repeat; background-position:50% 50%; background-size: cover;"><span class="play hidden-xs"></span><span class="score">{$v['hint']}</span></a>
+							<div class="title">
+								<h5 class="text-overflow"><a href="{php echo $this->createMobileUrl('detail',array('op'=>'dongman','d_id'=>$v['id'],'url'=>$v['link']));}">{$v['title']}</a></h5>
+							</div>
+							<div class="subtitle text-muted text-muted text-overflow hidden-xs">{$v['star']}</div>
+						</div>
+						{/if}
+						{/loop} 
+			</div>
+		</div>		<!--动漫-->
+	<div class="hy-layout hidden-sm hidden-xs clearfix">
+			<div class="hy-video-head">
+				<h3 class="margin-0">友情链接</h3>
+			</div>
+			<div class="hy-footer-link">
+				<div class="item clearfix">
+					<ul class="clearfix" style="    text-align:center;   ">
+						
+
+<a target="_blank" href="http://www.le.com/"><img src="{MODULE_URL}static/picture/letvlogo.png" class="ylimg"></a></dt>
+
+
+
+<a target="_blank" href="http://v.qq.com/"><img src="{MODULE_URL}static/picture/qqlogo.png" class="ylimg" ></a></dt>
+
+
+
+<a target="_blank" href="http://www.iqiyi.com/"><img src="{MODULE_URL}static/picture/iqiyi.png" class="ylimg"></a></dt>
+
+
+<a target="_blank" href="http://www.youku.com/"><img src="{MODULE_URL}static/picture/youkulogo.png" class="ylimg"></a></dt>
+
+
+
+<a target="_blank" href="http://www.tudou.com/"><img src="{MODULE_URL}static/picture/tudoulogo.png" class="ylimg"></a></dt>
+
+
+
+<a target="_blank" href="http://www.mgtv.com/"><img src="{MODULE_URL}static/picture/hunantvlogo.png" class="ylimg"></a></dt>
+
+
+
+<a target="_blank" href="http://tv.sohu.com/"><img src="{MODULE_URL}static/picture/sohulogo.png" class="ylimg"></a></dt>
+
+
+
+<a target="_blank" href="http://cloud.youku.com/"><img src="{MODULE_URL}static/picture/ykcloud.png" class="ylimg"></a></dt>
+
+
+
+<a target="_blank" href="http://www.acfun.tv/"><img src="{MODULE_URL}static/picture/acfun.png" class="ylimg"></a></dt>
+
+
+
+<a target="_blank" href="http://www.bilibili.com/"><img src="{MODULE_URL}static/picture/bilibili.png" class="ylimg"></a></dt>
+
+
+
+<a target="_blank" href="http://www.fun.tv/"><img src="{MODULE_URL}static/picture/fengxing.gif" class="ylimg"></a></dt>
+
+
+
+<a target="_blank" href="http://www.wasu.cn/"><img src="{MODULE_URL}static/picture/wasulogo.png" class="ylimg"></a></dt>
+
+
+
+<a target="_blank" href="http://www.56.com/"><img src="{MODULE_URL}static/picture/56logo.png" class="ylimg"></a></dt>
+
+
+
+<a target="_blank" href="http://www.yinyuetai.com/"><img src="{MODULE_URL}static/picture/yinyuetailogo.png" class="ylimg"></a></dt>
+
+
+	
+						</ul>
+				</div>
+			</div>
+			
+		</div>
+		</div>
+		</div>
+		<style>
+		.ylimg{
+		width:12%;
+		    border: 1px solid #ededed;   
+			position: relative;
+    padding: 16px 14.35px;
+    margin: 10px;
+    background: #fff;
+		}
+		</style>
+		<script>
+	    var swiper = new Swiper('.hy-slide', {
+	        pagination: '.swiper-pagination',
+	        paginationClickable: true,
+	        autoplay: 3000,
+	        nextButton: '.swiper-button-next',
+            prevButton: '.swiper-button-prev',
+	    });	    
+	    </script>
+		{template 'web_foot'}
+	
+
+</body>
+</html>
